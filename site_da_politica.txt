@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2018-11-07 12:04:28 BRST
+-- Started on 2018-11-21 15:25:32 BRST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2156 (class 0 OID 0)
+-- TOC entry 2161 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -39,7 +39,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 183 (class 1259 OID 24748)
+-- TOC entry 181 (class 1259 OID 24853)
 -- Name: politico; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -48,25 +48,32 @@ CREATE TABLE politico (
     nr_cpf numeric(11,11),
     ds_email text,
     ds_usuario character varying(20),
-    nm_senha character varying(20)
+    nm_senha character varying(20),
+    nm_nick_politico name NOT NULL
 );
 
 
 ALTER TABLE politico OWNER TO postgres;
 
 --
--- TOC entry 184 (class 1259 OID 24751)
+-- TOC entry 182 (class 1259 OID 24859)
 -- Name: publicacao; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE publicacao (
+    nr_curtidas numeric,
+    nr_comentarios numeric,
+    nr_compartilhamentos numeric,
+    nr_descurtidas numeric,
+    dt_data date,
+    tm_horario time without time zone
 );
 
 
 ALTER TABLE publicacao OWNER TO postgres;
 
 --
--- TOC entry 182 (class 1259 OID 24745)
+-- TOC entry 183 (class 1259 OID 24862)
 -- Name: usuario_adm; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -77,47 +84,48 @@ CREATE TABLE usuario_adm (
 ALTER TABLE usuario_adm OWNER TO postgres;
 
 --
--- TOC entry 181 (class 1259 OID 24742)
+-- TOC entry 184 (class 1259 OID 24865)
 -- Name: usuario_comum; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE usuario_comum (
-    nm_nome_usuario character varying(100),
     ds_email text,
     ds_usuario character varying(20),
-    nr_numero numeric(11,11) NOT NULL,
-    nr_cpf numeric(11,11),
+    nr_numero numeric(11,0) NOT NULL,
+    nr_cpf numeric(11,0),
     nm_senha character varying(20),
     nr_nascimento numeric(8,8),
-    ds_posicao text
+    ds_posicao text,
+    nm_usuario name,
+    nm_nick_name name NOT NULL
 );
 
 
 ALTER TABLE usuario_comum OWNER TO postgres;
 
 --
--- TOC entry 2147 (class 0 OID 24748)
--- Dependencies: 183
+-- TOC entry 2150 (class 0 OID 24853)
+-- Dependencies: 181
 -- Data for Name: politico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY politico (nm_nome_politico, nr_cpf, ds_email, ds_usuario, nm_senha) FROM stdin;
+COPY politico (nm_nome_politico, nr_cpf, ds_email, ds_usuario, nm_senha, nm_nick_politico) FROM stdin;
 \.
 
 
 --
--- TOC entry 2148 (class 0 OID 24751)
--- Dependencies: 184
+-- TOC entry 2151 (class 0 OID 24859)
+-- Dependencies: 182
 -- Data for Name: publicacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY publicacao  FROM stdin;
+COPY publicacao (nr_curtidas, nr_comentarios, nr_compartilhamentos, nr_descurtidas, dt_data, tm_horario) FROM stdin;
 \.
 
 
 --
--- TOC entry 2146 (class 0 OID 24745)
--- Dependencies: 182
+-- TOC entry 2152 (class 0 OID 24862)
+-- Dependencies: 183
 -- Data for Name: usuario_adm; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -126,18 +134,36 @@ COPY usuario_adm  FROM stdin;
 
 
 --
--- TOC entry 2145 (class 0 OID 24742)
--- Dependencies: 181
+-- TOC entry 2153 (class 0 OID 24865)
+-- Dependencies: 184
 -- Data for Name: usuario_comum; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY usuario_comum (nm_nome_usuario, ds_email, ds_usuario, nr_numero, nr_cpf, nm_senha, nr_nascimento, ds_posicao) FROM stdin;
+COPY usuario_comum (ds_email, ds_usuario, nr_numero, nr_cpf, nm_senha, nr_nascimento, ds_posicao, nm_usuario, nm_nick_name) FROM stdin;
 \.
 
 
 --
--- TOC entry 2155 (class 0 OID 0)
--- Dependencies: 6
+-- TOC entry 2035 (class 2606 OID 24875)
+-- Name: pk_nm_nick_name; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY usuario_comum
+    ADD CONSTRAINT pk_nm_nick_name PRIMARY KEY (nm_nick_name);
+
+
+--
+-- TOC entry 2033 (class 2606 OID 24877)
+-- Name: pk_nm_nick_politico; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY politico
+    ADD CONSTRAINT pk_nm_nick_politico PRIMARY KEY (nm_nick_politico);
+
+
+--
+-- TOC entry 2160 (class 0 OID 0)
+-- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
@@ -147,7 +173,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2018-11-07 12:04:28 BRST
+-- Completed on 2018-11-21 15:25:32 BRST
 
 --
 -- PostgreSQL database dump complete
