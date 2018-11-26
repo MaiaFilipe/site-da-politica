@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2018-11-26 11:12:01 BRST
+-- Started on 2018-11-26 12:12:57 BRST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2161 (class 0 OID 0)
+-- TOC entry 2163 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
@@ -49,7 +49,8 @@ CREATE TABLE politico (
     ds_email text,
     ds_usuario character varying(20),
     nm_senha character varying(20),
-    nm_nick_politico name NOT NULL
+    nm_nick_politico name NOT NULL,
+    cd_politico integer NOT NULL
 );
 
 
@@ -59,12 +60,9 @@ CREATE TABLE politico (
 --
 
 CREATE TABLE publicacao (
-    nr_curtidas numeric,
-    nr_comentarios numeric,
-    nr_compartilhamentos numeric,
-    nr_descurtidas numeric,
     dt_data date,
-    tm_horario time without time zone
+    tm_horario time without time zone,
+    cd_publicacao integer NOT NULL
 );
 
 
@@ -88,35 +86,36 @@ CREATE TABLE usuario_comum (
     nr_numero numeric(11,0) NOT NULL,
     nr_cpf numeric(11,0),
     nm_senha character varying(20),
-    nr_nascimento numeric(8,8),
     ds_posicao text,
     nm_usuario name,
-    nm_nick_name name NOT NULL
+    nm_nick_name name NOT NULL,
+    cd_usuario integer NOT NULL,
+    dt_nascimento timestamp(6) with time zone
 );
 
 
 --
--- TOC entry 2150 (class 0 OID 33374)
+-- TOC entry 2152 (class 0 OID 33374)
 -- Dependencies: 181
 -- Data for Name: politico; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY politico (nm_nome_politico, nr_cpf, ds_email, ds_usuario, nm_senha, nm_nick_politico) FROM stdin;
+COPY politico (nm_nome_politico, nr_cpf, ds_email, ds_usuario, nm_senha, nm_nick_politico, cd_politico) FROM stdin;
 \.
 
 
 --
--- TOC entry 2151 (class 0 OID 33380)
+-- TOC entry 2153 (class 0 OID 33380)
 -- Dependencies: 182
 -- Data for Name: publicacao; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY publicacao (nr_curtidas, nr_comentarios, nr_compartilhamentos, nr_descurtidas, dt_data, tm_horario) FROM stdin;
+COPY publicacao (dt_data, tm_horario, cd_publicacao) FROM stdin;
 \.
 
 
 --
--- TOC entry 2152 (class 0 OID 33386)
+-- TOC entry 2154 (class 0 OID 33386)
 -- Dependencies: 183
 -- Data for Name: usuario_adm; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -126,35 +125,44 @@ COPY usuario_adm  FROM stdin;
 
 
 --
--- TOC entry 2153 (class 0 OID 33389)
+-- TOC entry 2155 (class 0 OID 33389)
 -- Dependencies: 184
 -- Data for Name: usuario_comum; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY usuario_comum (ds_email, ds_usuario, nr_numero, nr_cpf, nm_senha, nr_nascimento, ds_posicao, nm_usuario, nm_nick_name) FROM stdin;
+COPY usuario_comum (ds_email, ds_usuario, nr_numero, nr_cpf, nm_senha, ds_posicao, nm_usuario, nm_nick_name, cd_usuario, dt_nascimento) FROM stdin;
 \.
 
 
 --
--- TOC entry 2035 (class 2606 OID 33396)
--- Name: pk_nm_nick_name; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY usuario_comum
-    ADD CONSTRAINT pk_nm_nick_name PRIMARY KEY (nm_nick_name);
-
-
---
--- TOC entry 2033 (class 2606 OID 33398)
--- Name: pk_nm_nick_politico; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 2033 (class 2606 OID 33410)
+-- Name: pk_cd_politico; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY politico
-    ADD CONSTRAINT pk_nm_nick_politico PRIMARY KEY (nm_nick_politico);
+    ADD CONSTRAINT pk_cd_politico PRIMARY KEY (cd_politico);
 
 
 --
--- TOC entry 2160 (class 0 OID 0)
+-- TOC entry 2035 (class 2606 OID 33408)
+-- Name: pk_cd_publicacao; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY publicacao
+    ADD CONSTRAINT pk_cd_publicacao PRIMARY KEY (cd_publicacao);
+
+
+--
+-- TOC entry 2037 (class 2606 OID 33406)
+-- Name: pk_cd_usuario; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY usuario_comum
+    ADD CONSTRAINT pk_cd_usuario PRIMARY KEY (cd_usuario);
+
+
+--
+-- TOC entry 2162 (class 0 OID 0)
 -- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: -
 --
@@ -165,7 +173,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2018-11-26 11:12:01 BRST
+-- Completed on 2018-11-26 12:12:57 BRST
 
 --
 -- PostgreSQL database dump complete
