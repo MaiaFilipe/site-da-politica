@@ -9,14 +9,6 @@ package br.edu.iff.site_da_politica;
  *
  * @author aluno
  */
-public class Politica {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("a");
-    }
+public class Publicacao {
     
 }
