@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.edu.iff.site_da_politica;
 
-/**
- *
- * @author aluno
- */
 public class Politica {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
+<<<<<<< HEAD
+        
+=======
         // TODO code application logic here
         System.out.println("a");
+>>>>>>> c42454c65d7503697685e1bd644476d66be0c391
     }
     
 }

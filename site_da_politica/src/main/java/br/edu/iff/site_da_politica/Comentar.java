@@ -5,10 +5,38 @@
  */
 package br.edu.iff.site_da_politica;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
-public class Comentar {
+
+
+
+@Entity
+@Table(name = "comentar")
+public class Comentar implements Serializable {
+   
+    @Id
+    @Column(name = "cd_comentar")
+    Integer codigoComentario;
     
+    @Id
+    @Column(name = "cd_usuario_adm")
+    Integer codigoUsuarioAdm;
+    
+    @Id
+    @Column(name = "cd_usuario_politico")
+    Integer codigoUsuarioPolitico;
+    
+    @Id
+    @Column(name = "cd_usuario_comum")
+    Integer codigoUsuarioComum;
+    
+  //CONSTRAINT pk_cd_comentar PRIMARY KEY (cd_comentar) 
 }
