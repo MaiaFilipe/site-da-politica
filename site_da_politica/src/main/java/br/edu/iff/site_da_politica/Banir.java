@@ -15,8 +15,7 @@ import javax.persistence.Table;
 @Entity 
 @Table(name = "banir")
 public class Banir implements Serializable {
-    
-    
+
     @Id
     @Column(name = "cd_usuario_adm")
     Integer codigoUsuarioAdm;
