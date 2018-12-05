@@ -1,28 +1,36 @@
 #block{
+    background: yellow;
+    margin: auto;
+    height: 60%;
+    width: 90%;
 	padding: 15px 15px 15px 15px;
 	border-radius: 15px;
+    font-size: 15px;
 }
 
-input[type = text], input[type = date], textarea, input[type = password]{
+input[type = text], input[type = cpf], input[type = date], input[type = password]{
 	box-sizing: border-box;
 	border: none;
-	border-bottom: 2px solid grey;
-	-webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    border-color: grey;
     background-color: #f1f1f1;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 15px;
 }
 
 input[type = text]:focus {
-    width: 70%;
+    width: 90%;
+    transition: width 0.4s;
 }
 
 input[type = password]:focus {
-    width: 70%;
+    width: 90%;
+    transition: width 0.4s;
 }
 
 select {
-    width: 60%;
+    width: 30%;
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
@@ -34,7 +42,15 @@ input[type = submit]{
     border: none;
     color: white;
     padding: 16px 32px;
-    text-decoration: noe;
+    text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.left{
+    background: grey;
+    float: left;
+    width: 40%;
+    margin: auto;
+    padding: 0px 50px;
 }
