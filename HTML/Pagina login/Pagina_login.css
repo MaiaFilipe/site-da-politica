@@ -23,6 +23,10 @@ input,
   text-decoration: none; /* remove underline from anchors */
 }
 
+a{
+  text-decoration: none;
+}
+
 input:hover,
 .btn:hover {
   opacity: 1;
