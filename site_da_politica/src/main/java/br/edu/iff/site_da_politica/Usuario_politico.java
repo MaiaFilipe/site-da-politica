@@ -5,43 +5,42 @@
  */
 package br.edu.iff.site_da_politica;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
 @Entity
 @Table(name = "curtir")
-public class Usuario_politico {
-
-	@Id
-    @Column(name = "nm_usuario_politico")
-    String nomeUsuarioPolitico;
-
-    @Id
-    @Column(name = "nr_cpf")
-    Integer numeroCpf;
-
-    @Id
-    @Column(name = "ds_email")
-    String descricaoEmail;
-
-    @Id
-    @Column(name = "ds_usuario_politico")
-    String descricaoUsuarioPolitico;
-
-    @Id
-    @Column(name = "nm_senha")
-    String senha;
-
-    @Id
-    @Column(name = "nm_nick_politico")
-    String nickPolitico;
-
+public class Usuario_politico implements Serializable {
+    
     @Id
     @Column(name = "cd_usuario_politico")
     Integer codigoUsuarioPolitico;
+    
+    @Column(name = "nm_usuario_politico")
+    String nomeUsuarioPolitico;
 
-    @Id
+    @Column(name = "nr_cpf")
+    Integer numeroCpf;
+
+    @Column(name = "ds_email")
+    String descricaoEmail;
+
+    @Column(name = "ds_usuario_politico")
+    String descricaoUsuarioPolitico;
+
+    @Column(name = "nm_senha")
+    String senha;
+
+    @Column(name = "nm_nick_politico")
+    String nickPolitico;
+
     @Column(name = "ds_posicao_politica")
     Integer descricaoPosicaoPolitica;
 
