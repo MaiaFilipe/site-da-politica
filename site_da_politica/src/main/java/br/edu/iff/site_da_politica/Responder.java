@@ -21,18 +21,88 @@ public class Responder implements Serializable {
     
     @Id
     @Column(name = "cd_resposta")
-    Integer codigoResposta;
+    private Integer codigoResposta;
 
     @Column(name = "cd_usuario_comum")
-    Integer codigoUsuarioComum;
+    private Integer codigoUsuarioComum;
 
     @Column(name = "cd_usuario_politico")
-    Integer codigoUsuarioPolitico;
+    private Integer codigoUsuarioPolitico;
 
     @Column(name = "cd_usuario_adm")
-    Integer codigoUsuarioAdm;
+    private Integer codigoUsuarioAdm;
 
     @Column(name = "ds_resposta")
-    Integer descricaoResposta;
+    private Integer descricaoResposta;
+
+    /**
+     * @return the codigoResposta
+     */
+    public Integer getCodigoResposta() {
+        return codigoResposta;
+    }
+
+    /**
+     * @param codigoResposta the codigoResposta to set
+     */
+    public void setCodigoResposta(Integer codigoResposta) {
+        this.codigoResposta = codigoResposta;
+    }
+
+    /**
+     * @return the codigoUsuarioComum
+     */
+    public Integer getCodigoUsuarioComum() {
+        return codigoUsuarioComum;
+    }
+
+    /**
+     * @param codigoUsuarioComum the codigoUsuarioComum to set
+     */
+    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
+        this.codigoUsuarioComum = codigoUsuarioComum;
+    }
+
+    /**
+     * @return the codigoUsuarioPolitico
+     */
+    public Integer getCodigoUsuarioPolitico() {
+        return codigoUsuarioPolitico;
+    }
+
+    /**
+     * @param codigoUsuarioPolitico the codigoUsuarioPolitico to set
+     */
+    public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
+        this.codigoUsuarioPolitico = codigoUsuarioPolitico;
+    }
+
+    /**
+     * @return the codigoUsuarioAdm
+     */
+    public Integer getCodigoUsuarioAdm() {
+        return codigoUsuarioAdm;
+    }
+
+    /**
+     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
+     */
+    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
+        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    }
+
+    /**
+     * @return the descricaoResposta
+     */
+    public Integer getDescricaoResposta() {
+        return descricaoResposta;
+    }
+
+    /**
+     * @param descricaoResposta the descricaoResposta to set
+     */
+    public void setDescricaoResposta(Integer descricaoResposta) {
+        this.descricaoResposta = descricaoResposta;
+    }
 
 }

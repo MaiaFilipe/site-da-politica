@@ -16,21 +16,75 @@ import javax.persistence.Table;
 @Table(name = "banir")
 public class Banir implements Serializable {
 
+    /**
+     * @return the codigoBanir
+     */
+    public Integer getCodigoBanir() {
+        return codigoBanir;
+    }
+
+    /**
+     * @param codigoBanir the codigoBanir to set
+     */
+    public void setCodigoBanir(Integer codigoBanir) {
+        this.codigoBanir = codigoBanir;
+    }
+
+    /**
+     * @return the codigoUsuarioPolitico
+     */
+    public Integer getCodigoUsuarioPolitico() {
+        return codigoUsuarioPolitico;
+    }
+
+    /**
+     * @param codigoUsuarioPolitico the codigoUsuarioPolitico to set
+     */
+    public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
+        this.codigoUsuarioPolitico = codigoUsuarioPolitico;
+    }
+
+    /**
+     * @return the codigoUsuarioComum
+     */
+    public Integer getCodigoUsuarioComum() {
+        return codigoUsuarioComum;
+    }
+
+    /**
+     * @param codigoUsuarioComum the codigoUsuarioComum to set
+     */
+    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
+        this.codigoUsuarioComum = codigoUsuarioComum;
+    }
+
+    /**
+     * @return the codigoUsuarioAdm
+     */
+    public Integer getCodigoUsuarioAdm() {
+        return codigoUsuarioAdm;
+    }
+
+    /**
+     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
+     */
+    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
+        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    }
+
     @Id
     @Column(name = "cd_usuario_adm")
-    Integer codigoUsuarioAdm;
+    private Integer codigoUsuarioAdm;
     
     @Id
     @Column(name = "cd_usuario_comum")
-    Integer codigoUsuarioComum;
+    private Integer codigoUsuarioComum;
     
     @Id
     @Column(name = "cd_usuario_politico")
-    Integer codigoUsuarioPolitico;
+    private Integer codigoUsuarioPolitico;
     
     @Id
     @Column(name = "cd_banir")
-    Integer codigoBanir;
-    
-  //CONSTRAINT pk_cd_banir PRIMARY KEY (cd_banir)   
+    private Integer codigoBanir;
 }

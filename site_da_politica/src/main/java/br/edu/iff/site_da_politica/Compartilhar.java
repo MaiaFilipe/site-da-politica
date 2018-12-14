@@ -16,26 +16,96 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "compartilhar")
 public class Compartilhar implements Serializable {
+
+    /**
+     * @return the codigoCompartilhar
+     */
+    public Integer getCodigoCompartilhar() {
+        return codigoCompartilhar;
+    }
+
+    /**
+     * @param codigoCompartilhar the codigoCompartilhar to set
+     */
+    public void setCodigoCompartilhar(Integer codigoCompartilhar) {
+        this.codigoCompartilhar = codigoCompartilhar;
+    }
+
+    /**
+     * @return the codigoUsuarioComum
+     */
+    public Integer getCodigoUsuarioComum() {
+        return codigoUsuarioComum;
+    }
+
+    /**
+     * @param codigoUsuarioComum the codigoUsuarioComum to set
+     */
+    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
+        this.codigoUsuarioComum = codigoUsuarioComum;
+    }
+
+    /**
+     * @return the codigoUsuarioAdm
+     */
+    public Integer getCodigoUsuarioAdm() {
+        return codigoUsuarioAdm;
+    }
+
+    /**
+     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
+     */
+    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
+        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    }
+
+    /**
+     * @return the codigoUsuarioPolitico
+     */
+    public Integer getCodigoUsuarioPolitico() {
+        return codigoUsuarioPolitico;
+    }
+
+    /**
+     * @param codigoUsuarioPolitico the codigoUsuarioPolitico to set
+     */
+    public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
+        this.codigoUsuarioPolitico = codigoUsuarioPolitico;
+    }
+
+    /**
+     * @return the tempo
+     */
+    public Time getTempo() {
+        return tempo;
+    }
+
+    /**
+     * @param tempo the tempo to set
+     */
+    public void setTempo(Time tempo) {
+        this.tempo = tempo;
+    }
     
     @Id
     @Column(name = "cd_compartilha")
-    Integer codigoCompartilhar;
+    private Integer codigoCompartilhar;
     
     @Id
     @Column(name = "cd_usuario_comum")
-    Integer codigoUsuarioComum;
+    private Integer codigoUsuarioComum;
     
     @Id
     @Column(name = "cd_usuario_adm")
-    Integer codigoUsuarioAdm;
+    private Integer codigoUsuarioAdm;
     
     @Id
     @Column(name = "cd_usuario_politica")
-    Integer codigoUsuarioPolitico;
+    private Integer codigoUsuarioPolitico;
     
     @Id
     @Column(name = "tm_horario")
-    Time tempo;
+    private Time tempo;
 
   //CONSTRAINT pk_cd_compartilhar PRIMARY KEY (cd_compartilhar)
 }

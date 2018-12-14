@@ -22,33 +22,173 @@ public class Usuario_Comum implements Serializable {
 
     @Id
     @Column(name = "cd_usuario_comum")
-    Integer codigoUsuarioComum;
+    private Integer codigoUsuarioComum;
     
     @Column(name = "ds_email")
-    String descricaoEmail;
+    private String descricaoEmail;
 
     @Column(name = "ds_usuario_comum")
-    String descricaoUsuarioComum;
+    private String descricaoUsuarioComum;
 
     @Column(name = "nr_numero")
-    Integer numero;
+    private Integer numero;
 
     @Column(name = "nr_cpf")
-    Integer numeroCpf;
+    private Integer numeroCpf;
 
     @Column(name = "nm_senha")
-    String senha;
+    private String senha;
 
     @Column(name = "ds_posicao")
-    String descricaoPosicao;
+    private String descricaoPosicao;
 
     @Column(name = "nm_usuario_comum")
-    String nomeUsuarioComum;
+    private String nomeUsuarioComum;
 
     @Column(name = "nm_nick_name_comum")
-    String nickNameUsuarioComum;
+    private String nickNameUsuarioComum;
 
     @Column(name = "dt_nascimento")
-    Date dataNascimento;
+    private Date dataNascimento;
+
+    /**
+     * @return the codigoUsuarioComum
+     */
+    public Integer getCodigoUsuarioComum() {
+        return codigoUsuarioComum;
+    }
+
+    /**
+     * @param codigoUsuarioComum the codigoUsuarioComum to set
+     */
+    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
+        this.codigoUsuarioComum = codigoUsuarioComum;
+    }
+
+    /**
+     * @return the descricaoEmail
+     */
+    public String getDescricaoEmail() {
+        return descricaoEmail;
+    }
+
+    /**
+     * @param descricaoEmail the descricaoEmail to set
+     */
+    public void setDescricaoEmail(String descricaoEmail) {
+        this.descricaoEmail = descricaoEmail;
+    }
+
+    /**
+     * @return the descricaoUsuarioComum
+     */
+    public String getDescricaoUsuarioComum() {
+        return descricaoUsuarioComum;
+    }
+
+    /**
+     * @param descricaoUsuarioComum the descricaoUsuarioComum to set
+     */
+    public void setDescricaoUsuarioComum(String descricaoUsuarioComum) {
+        this.descricaoUsuarioComum = descricaoUsuarioComum;
+    }
+
+    /**
+     * @return the numero
+     */
+    public Integer getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    /**
+     * @return the numeroCpf
+     */
+    public Integer getNumeroCpf() {
+        return numeroCpf;
+    }
+
+    /**
+     * @param numeroCpf the numeroCpf to set
+     */
+    public void setNumeroCpf(Integer numeroCpf) {
+        this.numeroCpf = numeroCpf;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    /**
+     * @return the descricaoPosicao
+     */
+    public String getDescricaoPosicao() {
+        return descricaoPosicao;
+    }
+
+    /**
+     * @param descricaoPosicao the descricaoPosicao to set
+     */
+    public void setDescricaoPosicao(String descricaoPosicao) {
+        this.descricaoPosicao = descricaoPosicao;
+    }
+
+    /**
+     * @return the nomeUsuarioComum
+     */
+    public String getNomeUsuarioComum() {
+        return nomeUsuarioComum;
+    }
+
+    /**
+     * @param nomeUsuarioComum the nomeUsuarioComum to set
+     */
+    public void setNomeUsuarioComum(String nomeUsuarioComum) {
+        this.nomeUsuarioComum = nomeUsuarioComum;
+    }
+
+    /**
+     * @return the nickNameUsuarioComum
+     */
+    public String getNickNameUsuarioComum() {
+        return nickNameUsuarioComum;
+    }
+
+    /**
+     * @param nickNameUsuarioComum the nickNameUsuarioComum to set
+     */
+    public void setNickNameUsuarioComum(String nickNameUsuarioComum) {
+        this.nickNameUsuarioComum = nickNameUsuarioComum;
+    }
+
+    /**
+     * @return the dataNascimento
+     */
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    /**
+     * @param dataNascimento the dataNascimento to set
+     */
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
     
 }

@@ -22,32 +22,172 @@ public class Usuario_Adm implements Serializable {
     
     @Id
     @Column(name = "cd_usuario_adm")
-    Integer codigoUsuarioAdm;
+    private Integer codigoUsuarioAdm;
 
     @Column(name = "ds_email")
-    String descricaoEmail;
+    private String descricaoEmail;
 
     @Column(name = "ds_usuario_adm")
-    String descricaoUsuarioAdm;
+    private String descricaoUsuarioAdm;
 
     @Column(name = "nr_numero")
-    Integer numero;
+    private Integer numero;
 
     @Column(name = "nr_cpf")
-    Integer numeroCpf;
+    private Integer numeroCpf;
 
     @Column(name = "nm_senha")
-    String senha;
+    private String senha;
 
     @Column(name = "ds_posicao_politica")
-    String descricaoPosicao;
+    private String descricaoPosicao;
 
     @Column(name = "nm_usuario_adm")
-    String nomeUsuarioAdm;
+    private String nomeUsuarioAdm;
 
     @Column(name = "nm_nick_name_adm")
-    String nickUsuarioAdm;
+    private String nickUsuarioAdm;
 
     @Column(name = "dt_nascimento")
-    Date dataNascimento;
+    private Date dataNascimento;
+
+    /**
+     * @return the codigoUsuarioAdm
+     */
+    public Integer getCodigoUsuarioAdm() {
+        return codigoUsuarioAdm;
+    }
+
+    /**
+     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
+     */
+    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
+        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    }
+
+    /**
+     * @return the descricaoEmail
+     */
+    public String getDescricaoEmail() {
+        return descricaoEmail;
+    }
+
+    /**
+     * @param descricaoEmail the descricaoEmail to set
+     */
+    public void setDescricaoEmail(String descricaoEmail) {
+        this.descricaoEmail = descricaoEmail;
+    }
+
+    /**
+     * @return the descricaoUsuarioAdm
+     */
+    public String getDescricaoUsuarioAdm() {
+        return descricaoUsuarioAdm;
+    }
+
+    /**
+     * @param descricaoUsuarioAdm the descricaoUsuarioAdm to set
+     */
+    public void setDescricaoUsuarioAdm(String descricaoUsuarioAdm) {
+        this.descricaoUsuarioAdm = descricaoUsuarioAdm;
+    }
+
+    /**
+     * @return the numero
+     */
+    public Integer getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    /**
+     * @return the numeroCpf
+     */
+    public Integer getNumeroCpf() {
+        return numeroCpf;
+    }
+
+    /**
+     * @param numeroCpf the numeroCpf to set
+     */
+    public void setNumeroCpf(Integer numeroCpf) {
+        this.numeroCpf = numeroCpf;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    /**
+     * @return the descricaoPosicao
+     */
+    public String getDescricaoPosicao() {
+        return descricaoPosicao;
+    }
+
+    /**
+     * @param descricaoPosicao the descricaoPosicao to set
+     */
+    public void setDescricaoPosicao(String descricaoPosicao) {
+        this.descricaoPosicao = descricaoPosicao;
+    }
+
+    /**
+     * @return the nomeUsuarioAdm
+     */
+    public String getNomeUsuarioAdm() {
+        return nomeUsuarioAdm;
+    }
+
+    /**
+     * @param nomeUsuarioAdm the nomeUsuarioAdm to set
+     */
+    public void setNomeUsuarioAdm(String nomeUsuarioAdm) {
+        this.nomeUsuarioAdm = nomeUsuarioAdm;
+    }
+
+    /**
+     * @return the nickUsuarioAdm
+     */
+    public String getNickUsuarioAdm() {
+        return nickUsuarioAdm;
+    }
+
+    /**
+     * @param nickUsuarioAdm the nickUsuarioAdm to set
+     */
+    public void setNickUsuarioAdm(String nickUsuarioAdm) {
+        this.nickUsuarioAdm = nickUsuarioAdm;
+    }
+
+    /**
+     * @return the dataNascimento
+     */
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    /**
+     * @param dataNascimento the dataNascimento to set
+     */
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 }

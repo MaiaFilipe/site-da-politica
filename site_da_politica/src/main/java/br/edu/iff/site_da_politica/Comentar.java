@@ -21,22 +21,76 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "comentar")
 public class Comentar implements Serializable {
+
+    /**
+     * @return the codigoComentario
+     */
+    public Integer getCodigoComentario() {
+        return codigoComentario;
+    }
+
+    /**
+     * @param codigoComentario the codigoComentario to set
+     */
+    public void setCodigoComentario(Integer codigoComentario) {
+        this.codigoComentario = codigoComentario;
+    }
+
+    /**
+     * @return the codigoUsuarioAdm
+     */
+    public Integer getCodigoUsuarioAdm() {
+        return codigoUsuarioAdm;
+    }
+
+    /**
+     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
+     */
+    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
+        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    }
+
+    /**
+     * @return the codigoUsuarioPolitico
+     */
+    public Integer getCodigoUsuarioPolitico() {
+        return codigoUsuarioPolitico;
+    }
+
+    /**
+     * @param codigoUsuarioPolitico the codigoUsuarioPolitico to set
+     */
+    public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
+        this.codigoUsuarioPolitico = codigoUsuarioPolitico;
+    }
+
+    /**
+     * @return the codigoUsuarioComum
+     */
+    public Integer getCodigoUsuarioComum() {
+        return codigoUsuarioComum;
+    }
+
+    /**
+     * @param codigoUsuarioComum the codigoUsuarioComum to set
+     */
+    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
+        this.codigoUsuarioComum = codigoUsuarioComum;
+    }
    
     @Id
     @Column(name = "cd_comentar")
-    Integer codigoComentario;
+    private Integer codigoComentario;
     
     @Id
     @Column(name = "cd_usuario_adm")
-    Integer codigoUsuarioAdm;
+    private Integer codigoUsuarioAdm;
     
     @Id
     @Column(name = "cd_usuario_politico")
-    Integer codigoUsuarioPolitico;
+    private Integer codigoUsuarioPolitico;
     
     @Id
     @Column(name = "cd_usuario_comum")
-    Integer codigoUsuarioComum;
-    
-  //CONSTRAINT pk_cd_comentar PRIMARY KEY (cd_comentar) 
+    private Integer codigoUsuarioComum; 
 }
