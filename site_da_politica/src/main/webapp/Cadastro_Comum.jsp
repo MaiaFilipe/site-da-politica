@@ -42,7 +42,7 @@
 				<input type="cpf" name="nr_cpf" id="cpf" placeholder="Ex.: 000.000.000-00" maxlength="14" autocomplete="on"><br><br>
 
 			</div>
-			Data de nascimento: <input type="date" name = ""><br><br>
+			Data de nascimento: <input type="date" name = "dt_nascimento"><br><br>
 			Estado:<br>
 			<select name="estado">
 				<option value="AC">Acre (AC)</option>
@@ -73,14 +73,9 @@
 				<option value="SE">Sergipe (SE)</option>
 				<option value="TO">Tocantins (TO)</option>
 			</select><br><br>
-                        
-                        Partido:<br>
-                        <select name="partido">
-				<option value="AC">Acre (AC)</option>
-			</select><br><br>
 
 			Posição política:<br>
-			<select name="ds_posicao_politica">
+			<select name="ds_posicao">
 				<option value="direita">Direita</option>
 				<option value="esquerda">Esquerda</option>
 				<option value="centro">Centro</option>
