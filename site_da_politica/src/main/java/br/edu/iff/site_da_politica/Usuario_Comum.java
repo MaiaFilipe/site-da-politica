@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -49,7 +43,7 @@ public class Usuario_Comum implements Serializable {
     private String nickNameUsuarioComum;
 
     @Column(name = "dt_nascimento")
-    private Date dataNascimento;
+    private Integer dataNascimento;
 
     /**
      * @return the codigoUsuarioComum
@@ -180,15 +174,19 @@ public class Usuario_Comum implements Serializable {
     /**
      * @return the dataNascimento
      */
-    public Date getDataNascimento() {
+    public Integer getDataNascimento() {
         return dataNascimento;
     }
 
     /**
      * @param dataNascimento the dataNascimento to set
      */
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(Integer dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    void setDataNascimento(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

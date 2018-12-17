@@ -1,19 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.edu.iff.site_da_politica;
+package br.edu.iff.site_da_politica.servelet;
 
-import br.edu.iff.site_da_politica;
-import java.time.Instant;
-import java.util.Date;
+
+import br.edu.iff.site_da_politica.Usuario_Adm;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.cfg.SettingsFactory;
 
 public class HibernateUsuarioAdm {
 
@@ -46,16 +39,15 @@ public class HibernateUsuarioAdm {
         }
         
         Usuario_Adm usuario = new Usuario_Adm();
-        usuario.setCodigoUsuarioAdm("Sou eu!");
-        usuario.setDescricaoEmail("eu@g.c");
-        usuario.setDataNascimento(Date.);
-        usuario.setNickUsuarioAdm("Eu");
-        usuario.setNomeUsuarioAdm("Eu 2");
-        usuario.setNumero("Mesmo");
-        usuario.setDescricaoUsuarioAdm("Brasil");
-        usuario.setNumeroCpf("123"e);
-        usuario.setSenha("123");
-        usuario.setDescricaoPosicao("Eu 2");
+        usuario.setDescricaoEmail("abc@def.com");
+        usuario.setDescricaoUsuarioAdm("Se fazer doideria, vai ficar sem acesso");
+        usuario.setNumero(999999999);
+        usuario.setNumeroCpf(00000000000);
+        usuario.setSenha("********");
+        usuario.setDescricaoPosicao("Centro");
+        usuario.setNomeUsuarioAdm("Rogê");
+        usuario.setNickUsuarioAdm("@Mc");
+        usuario.setDataNascimento(0000);
         
          session.save(usuario);
         tr.commit();

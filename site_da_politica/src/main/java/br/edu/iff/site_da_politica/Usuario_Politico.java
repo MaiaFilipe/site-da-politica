@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
@@ -16,14 +11,14 @@ import javax.persistence.Table;
  * @author aluno
  */
 @Entity
-@Table(name = "curtir")
-public class Usuario_politico implements Serializable {
+@Table(name = "usuario_politico")
+public class Usuario_Politico implements Serializable {
     
     @Id
     @Column(name = "cd_usuario_politico")
     private Integer codigoUsuarioPolitico;
     
-    @Column(name = "nm_usuario_politico")
+    @Column(name = "nm_usuario_politico") 
     private String nomeUsuarioPolitico;
 
     @Column(name = "nr_cpf")
@@ -38,11 +33,11 @@ public class Usuario_politico implements Serializable {
     @Column(name = "nm_senha")
     private String senha;
 
-    @Column(name = "nm_nick_politico")
+    @Column(name = "nm_nick_politico") //@
     private String nickPolitico;
 
     @Column(name = "ds_posicao_politica")
-    private Integer descricaoPosicaoPolitica;
+    private String descricaoPosicaoPolitica;
 
     /**
      * @return the codigoUsuarioPolitico
@@ -145,14 +140,14 @@ public class Usuario_politico implements Serializable {
     /**
      * @return the descricaoPosicaoPolitica
      */
-    public Integer getDescricaoPosicaoPolitica() {
+    public String getDescricaoPosicaoPolitica() {
         return descricaoPosicaoPolitica;
     }
 
     /**
      * @param descricaoPosicaoPolitica the descricaoPosicaoPolitica to set
      */
-    public void setDescricaoPosicaoPolitica(Integer descricaoPosicaoPolitica) {
+    public void setDescricaoPosicaoPolitica(String descricaoPosicaoPolitica) {
         this.descricaoPosicaoPolitica = descricaoPosicaoPolitica;
     }
 

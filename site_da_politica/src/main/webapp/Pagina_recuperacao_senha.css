@@ -1,0 +1,21 @@
+.recovery-panel {
+    margin-top: 150px;
+}
+.btn{
+        font-size:15px;
+        font-weight:bold;
+        color:black;
+        background:#638cb5;
+        border:0px;
+        width:80px;
+        height:40px;
+        font-family: 'Black Ops One', cursive;
+     
+       }
+.container{
+	font-family: 'Black Ops One', cursive;
+   background-color: white;
+}
+.body{
+	background-image: url(politica_background.jpg);
+}
