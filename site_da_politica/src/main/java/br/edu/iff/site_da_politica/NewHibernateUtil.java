@@ -1,6 +1,5 @@
 package br.edu.iff.site_da_politica;
 
-import br.edu.iff.site_da_politica.Usuario_Politico;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -30,11 +29,10 @@ public class NewHibernateUtil {
         
         System.out.println("SALVANDO USUARIO");
         Transaction tx = sessao.beginTransaction();
-        sessao.save(Usuario_Politico);
+        sessao.save(usuario);
         tx.commit();
         System.out.println("USUARIO SALVO");
         sessao.close();
         System.out.println("SESSAO FECHADA");
     }
-    
 }
