@@ -1,4 +1,5 @@
-package br.edu.iff.site_da_politica;
+
+package br.edu.iff.site_da_politica.servelet;
 
 import br.edu.iff.site_da_politica.SessaoHibernate;
 import br.edu.iff.site_da_politica.Usuario_Politico;
@@ -7,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -15,7 +17,7 @@ import org.hibernate.Transaction;
  * @author luizcanf
  */
 public class Cadastro extends HttpServlet {
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,10 +33,11 @@ public class Cadastro extends HttpServlet {
         System.out.println("RECEBENDO O USUARIO DO FORM HTML");
         Usuario_Politico usuario = new Usuario_Politico();
         usuario.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
-        usuario.setNumeroCpf(request.getInteger("nr_cpf"
-        ));
-        usuario.set(request.getParameter("usuarioname"));
-        
+        //usuario.setNumeroCpf(request.getParameter("nr_cpf"));
+        usuario.setDescricaoEmail(request.getParameter("ds_email"));
+        usuario.setSenha(request.getParameter("nm_senha"));
+        usuario.setNickPolitico(request.getParameter("nm_nick_politico"));
+        usuario.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
         
         try {
         System.out.println("SALVANDO USUARIO");
@@ -44,8 +47,7 @@ public class Cadastro extends HttpServlet {
         tx.commit();
         sessao.close();
         System.out.println("USUARIO SALVO");
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (HibernateException ex) {
             response.sendRedirect("error.html");
         }
         // redirecionar p outra página

@@ -21,7 +21,7 @@
 		<center><h1>Cadastro usuário político</h1></center>
 
 		<div class="left">
-			<form method = "post" action = "NewHibernateUtil">
+			<form method = "post" action = "Cadastro">
 				<label for="user_name">Usuário:</label><br>
 				<input type="text" name="nm_nick_politico" id="user_name"><br><br>
 
