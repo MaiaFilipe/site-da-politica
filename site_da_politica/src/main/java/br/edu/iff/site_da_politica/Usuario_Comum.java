@@ -23,6 +23,9 @@ public class Usuario_Comum implements Serializable {
 
     @Column(name = "ds_usuario_comum")
     private String descricaoUsuarioComum;
+    
+    @Column(name = "nm_estado")
+    private String nomeEstado;
 
     @Column(name = "nr_numero")
     private Integer numero;
@@ -44,6 +47,22 @@ public class Usuario_Comum implements Serializable {
 
     @Column(name = "dt_nascimento")
     private Integer dataNascimento;
+    
+    
+    /**
+     * @return the nomeEstado
+     */
+    public String getNomeEstado() {
+        return nomeEstado;
+    }
+
+    /**
+     * @param nomeEstado the nomeEstado to set
+     */
+    public void setNomeEstado(String nomeEstado) {
+        this.nomeEstado = nomeEstado;
+    }
+
 
     /**
      * @return the codigoUsuarioComum
@@ -59,6 +78,7 @@ public class Usuario_Comum implements Serializable {
         this.codigoUsuarioComum = codigoUsuarioComum;
     }
 
+    
     /**
      * @return the descricaoEmail
      */

@@ -21,7 +21,7 @@
 		<center><h1>Cadastro usuário</h1></center>
 
 		<div class="left">
-			<form method = "post" action = "HibernateUsuarioComum">
+			<form method = "POST" action = "HibernateUsuarioComum">
 				<label for="user_name">Usuário:</label><br>
 				<input type="text" name="nm_nick_name_comum" id="user_name"><br><br>
 
@@ -44,7 +44,7 @@
 			</div>
 			Data de nascimento: <input type="date" name = "dt_nascimento"><br><br>
 			Estado:<br>
-			<select name="estado">
+			<select name="nm_estado">
 				<option value="AC">Acre (AC)</option>
 				<option value="AL">Alagoas (AL)</option>
 				<option value="AP">Amapá (AP)</option>

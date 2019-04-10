@@ -2,6 +2,7 @@
 package br.edu.iff.site_da_politica.servelet;
 
 import br.edu.iff.site_da_politica.SessaoHibernate;
+import br.edu.iff.site_da_politica.Usuario_Comum;
 import br.edu.iff.site_da_politica.Usuario_Politico;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -51,9 +52,32 @@ public class Cadastro extends HttpServlet {
             response.sendRedirect("error.html");
         }
         // redirecionar p outra página
-        response.sendRedirect("Cadastro.jsp");
+        response.sendRedirect("Cadastro_Comum.jsp");
     }
 
+    /*
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Usuario_Comum user = new Usuario_Comum();
+        user.setNomeUsuarioComum(request.getParameter("nomeUsuarioComum"));
+        user.setNomeUsuarioComum(request.getParameter("nomeUsuarioComum"));
+        user.setDescricaoEmail(request.getParameter("descricaoEmail"));
+        user.setSenha(request.getParameter("senha"));
+        user.setNumeroCpf(request.getParameter("numeroCpf"));
+        user.setDataNascimento(request.getParameter("dataNascimento"));
+        user.setNomeEstado(request.getParameter("nomeEstado"));
+        user.setDescricaoPosicao(request.getParameter("descricaoPosicao"));
+        //todos os atributos SETados
+        Session session = HibernateUsuarioComum.getSession();
+        Transaction tr = session.beginTransaction();
+        session.save(user);
+        tr.commit();
+        session.close();
+        response.sendRedirect("cadastroOK.html");
+        processRequest(request, response);
+    }
+    */
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -77,11 +101,7 @@ public class Cadastro extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    
 
     /**
      * Returns a short description of the servlet.
