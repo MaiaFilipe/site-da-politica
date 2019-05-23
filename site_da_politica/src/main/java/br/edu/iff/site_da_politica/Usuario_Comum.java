@@ -208,5 +208,9 @@ public class Usuario_Comum implements Serializable {
     void setDataNascimento(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    void setcodigoUsuarioComum(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

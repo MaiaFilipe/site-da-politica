@@ -21,7 +21,7 @@
 		<center><h1>Cadastro usuário</h1></center>
 
 		<div class="left">
-			<form method = "POST" action = "HibernateUsuarioComum">
+			<form method = "POST" action = "UsuarioComumServlet">
 				<label for="user_name">Usuário:</label><br>
 				<input type="text" name="nm_nick_name_comum" id="user_name"><br><br>
 
