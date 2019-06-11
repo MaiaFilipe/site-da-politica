@@ -153,4 +153,12 @@ public class Usuario_Politico implements Serializable {
         this.descricaoPosicaoPolitica = descricaoPosicaoPolitica;
     }
 
+    void getNomeUsuarioPolitico(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setDataNascimento(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -73,16 +73,16 @@ public class UsuarioAdmServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-            Usuario_Comum usuarioc = new Usuario_Comum();
-            usuarioc.setcodigoUsuarioComum(request.getParameter("cd_usuario_comum"));
-            usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
-            usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
-            usuarioc.setNomeEstado(request.getParameter("nm_estado"));
-            //usuarioc.setNumero(request.getParameter("nr_numero"));
-            usuarioc.setSenha(request.getParameter("nm_senha"));
-            usuarioc.setDescricaoPosicao(request.getParameter("ds_posicao"));
-            usuarioc.setNomeUsuarioComum(request.getParameter("nm_usuario_comum"));
-            usuarioc.setNickNameUsuarioComum(request.getParameter("nm_nick_name_comum"));
+            Usuario_Adm usuarioa = new Usuario_Adm();
+            //usuarioa.setCodigoUsuarioAdm(request.getParameter("cd_usuario_adm"));
+            usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
+            usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
+            //usuarioa.setNumeroCpf(request.getParameter("nr_cpf"));
+            //usuarioa.setNumero(request.getParameter("nr_numero"));
+            usuarioa.setSenha(request.getParameter("nm_senha"));
+            usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
+            usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));
+            usuarioa.setNickUsuarioAdm(request.getParameter("nm_nick_name_adm"));
             //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
     
     }
