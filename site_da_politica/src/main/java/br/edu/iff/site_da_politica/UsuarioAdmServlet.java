@@ -36,10 +36,10 @@ public class UsuarioAdmServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioComumServlet</title>");            
+            out.println("<title>Servlet UsuarioAdmServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioComumServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UsuarioAdmServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

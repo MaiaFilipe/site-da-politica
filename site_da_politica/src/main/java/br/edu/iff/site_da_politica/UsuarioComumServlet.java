@@ -74,7 +74,7 @@ public class UsuarioComumServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
             Usuario_Comum usuarioc = new Usuario_Comum();
-            usuarioc.setcodigoUsuarioComum(request.getParameter("cd_usuario_comum"));
+            usuarioc.setcodigoUsuarioComum(Integer.parseInt(request.getParameter("cd_usuario_comum")));
             usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
             usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
             usuarioc.setNomeEstado(request.getParameter("nm_estado"));

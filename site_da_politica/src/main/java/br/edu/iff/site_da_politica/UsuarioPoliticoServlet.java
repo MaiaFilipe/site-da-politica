@@ -36,10 +36,10 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioComumServlet</title>");            
+            out.println("<title>Servlet UsuarioPoliticoServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioComumServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UsuarioPoliticoServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -74,7 +74,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
             Usuario_Politico usuariop = new Usuario_Politico();
-           //usuariop.setCodigoUsuarioPolitico(request.getParameter("cd_usuario_comum"));
+           //usuariop.setCodigoUsuarioPolitico(request.getParameter("cd_usuario_politico"));
             usuariop.setDescricaoEmail(request.getParameter("ds_email"));
             usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
             usuariop.setSenha(request.getParameter("nm_senha"));

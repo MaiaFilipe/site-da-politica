@@ -4,9 +4,25 @@
         <servlet-name>UsuarioComumServlet</servlet-name>
         <servlet-class>br.edu.iff.site_da_politica.UsuarioComumServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioPoliticoServlet</servlet-name>
+        <servlet-class>br.edu.iff.site_da_politica.UsuarioPoliticoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsuarioAdmServlet</servlet-name>
+        <servlet-class>br.edu.iff.site_da_politica.UsuarioAdmServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioComumServlet</servlet-name>
         <url-pattern>/UsuarioComumServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioPoliticoServlet</servlet-name>
+        <url-pattern>/UsuarioPoliticoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioAdmServlet</servlet-name>
+        <url-pattern>/UsuarioAdmServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

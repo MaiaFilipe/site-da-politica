@@ -18,10 +18,10 @@
 <body>
 	<body background=""> 
 	<div id = block>
-		<center><h1>Cadastro usuário político</h1></center>
+		<center><h1>Cadastro usuário Adm</h1></center>
 
 		<div class="left">
-			<form method = "Post" action = "HibernateUsuarioPolitico">
+			<form method = "POST" action = "UsuarioAdmServlet">
 				<label for="user_name">Usuário:</label><br>
 				<input type="text" name="nm_nick_politico" id="user_name"><br><br>
 

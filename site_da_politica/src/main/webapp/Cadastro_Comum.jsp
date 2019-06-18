@@ -18,7 +18,7 @@
 <body>
 	<body background=""> 
 	<div id = block>
-		<center><h1>Cadastro usuário</h1></center>
+		<center><h1>Cadastro usuário Comum</h1></center>
 
 		<div class="left">
 			<form method = "POST" action = "UsuarioComumServlet">

@@ -18,10 +18,10 @@
 <body>
 	<body background=""> 
 	<div id = block>
-		<center><h1>Cadastro usuário político</h1></center>
+		<center><h1>Cadastro usuário Político</h1></center>
 
 		<div class="left">
-			<form method = "post" action = "Cadastro">
+			<form method = "POST" action = "UsuarioPoliticoServlet">
 				<label for="user_name">Usuário:</label><br>
 				<input type="text" name="nm_nick_politico" id="user_name"><br><br>
 

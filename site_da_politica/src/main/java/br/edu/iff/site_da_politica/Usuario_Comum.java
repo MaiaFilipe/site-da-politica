@@ -209,8 +209,8 @@ public class Usuario_Comum implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setcodigoUsuarioComum(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void setcodigoUsuarioComum(Integer parameter) {
+        this.codigoUsuarioComum = parameter;
     }
     
 }
