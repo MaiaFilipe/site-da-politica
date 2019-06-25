@@ -164,7 +164,7 @@ CREATE TABLE usuario_adm (
     nm_usuario_adm name,
     nm_nick_name_adm name NOT NULL,
     cd_usuario_adm integer NOT NULL,
-    dt_nascimento timestamp(6) with time zone
+    dt_nascimento date
 );
 
 

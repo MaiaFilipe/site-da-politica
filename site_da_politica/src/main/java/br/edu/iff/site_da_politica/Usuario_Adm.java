@@ -1,10 +1,13 @@
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -13,6 +16,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usuario_adm")
 public class Usuario_Adm implements Serializable {
+
+    /**
+     * @return the dataNascimento
+     */
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    /**
+     * @param dataNascimento the dataNascimento to set
+     */
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
     
     @Id
     @Column(name = "cd_usuario_adm")
@@ -43,7 +60,9 @@ public class Usuario_Adm implements Serializable {
     private String nickUsuarioAdm;
 
     @Column(name = "dt_nascimento")
-    private Integer dataNascimento;
+    //@Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataNascimento;
 
     /**
      * @return the codigoUsuarioAdm
@@ -169,31 +188,5 @@ public class Usuario_Adm implements Serializable {
      */
     public void setNickUsuarioAdm(String nickUsuarioAdm) {
         this.nickUsuarioAdm = nickUsuarioAdm;
-    }
-
-    /**
-     * @return the dataNascimento
-     */
-    public Integer getDataNascimento() {
-        return dataNascimento;
-    }
-
-    /**
-     * @param dataNascimento the dataNascimento to set
-     */
-    public void setDataNascimento(Integer dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    void setDataNascimento(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void getDescricaoUsuarioAdm(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void getNumeroCpf(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

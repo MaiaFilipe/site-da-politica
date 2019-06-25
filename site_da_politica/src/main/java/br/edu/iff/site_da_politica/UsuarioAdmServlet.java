@@ -8,6 +8,11 @@ package br.edu.iff.site_da_politica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +41,7 @@ public class UsuarioAdmServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioAdmServlet</title>");            
+            out.println("<title>Servlet UsuarioAdmServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet UsuarioAdmServlet at " + request.getContextPath() + "</h1>");
@@ -58,7 +63,7 @@ public class UsuarioAdmServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
- 
+
     }
 
     /**
@@ -73,18 +78,28 @@ public class UsuarioAdmServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-            Usuario_Adm usuarioa = new Usuario_Adm();
-            //usuarioa.setCodigoUsuarioAdm(request.getParameter("cd_usuario_adm"));
-            usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
-            usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
-            //usuarioa.setNumeroCpf(request.getParameter("nr_cpf"));
-            //usuarioa.setNumero(request.getParameter("nr_numero"));
-            usuarioa.setSenha(request.getParameter("nm_senha"));
-            usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
-            usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));
-            usuarioa.setNickUsuarioAdm(request.getParameter("nm_nick_name_adm"));
-            //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
-    
+        Usuario_Adm usuarioa = new Usuario_Adm();
+        usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
+        usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
+        usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
+        usuarioa.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
+        usuarioa.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
+        usuarioa.setSenha(request.getParameter("nm_senha"));
+        usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
+        usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));
+        usuarioa.setNickUsuarioAdm(request.getParameter("nm_nick_name_adm"));
+
+        String dataForm = request.getParameter("dt_nascimento");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataNasc = null;
+        try {
+            dataNasc = sdf.parse(dataForm);
+        } catch (ParseException ex) {
+            //ex.printStackTrace();
+            Logger.getLogger(UsuarioAdmServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        usuarioa.setDataNascimento(dataNasc);
+
     }
 
     /**

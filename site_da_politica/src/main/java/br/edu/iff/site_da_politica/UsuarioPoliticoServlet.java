@@ -74,15 +74,14 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
             Usuario_Politico usuariop = new Usuario_Politico();
-           //usuariop.setCodigoUsuarioPolitico(request.getParameter("cd_usuario_politico"));
+            usuariop.setCodigoUsuarioPolitico(request.getParameter("cd_usuario_politico"));
             usuariop.setDescricaoEmail(request.getParameter("ds_email"));
             usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
             usuariop.setSenha(request.getParameter("nm_senha"));
             usuariop.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
             usuariop.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
             usuariop.setNickPolitico(request.getParameter("nm_nick_politico"));
-            usuariop.setDataNascimento(request.getParameter("dt_nascimento"));
-            //usuariop.setNumeroCpf(request.getParameter("nr_cpf"));
+            usuariop.setNumeroCpf(request.getParameter("nr_cpf"));
     }
 
     /**

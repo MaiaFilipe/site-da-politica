@@ -77,14 +77,14 @@ public class UsuarioComumServlet extends HttpServlet {
             usuarioc.setcodigoUsuarioComum(Integer.parseInt(request.getParameter("cd_usuario_comum")));
             usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
             usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
-            usuarioc.setNomeEstado(request.getParameter("nm_estado"));
-            //usuarioc.setNumero(request.getParameter("nr_numero"));
+            usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
+            usuarioc.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
+            usuarioc.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
             usuarioc.setSenha(request.getParameter("nm_senha"));
             usuarioc.setDescricaoPosicao(request.getParameter("ds_posicao"));
             usuarioc.setNomeUsuarioComum(request.getParameter("nm_usuario_comum"));
             usuarioc.setNickNameUsuarioComum(request.getParameter("nm_nick_name_comum"));
-            //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
-    
+            usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
     }
 
     /**
