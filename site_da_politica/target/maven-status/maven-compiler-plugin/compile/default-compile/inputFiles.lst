@@ -1,11 +1,11 @@
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Denuncia.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Compartilhar.java
-/home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Usuario_Comum.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioComumServlet.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/util/HibernateUtil.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Publicacao.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Comentar.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Curtir.java
+/home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioComum.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioPoliticoServlet.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Banir.java
 /home/aluno/Filipin/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioAdmServlet.java

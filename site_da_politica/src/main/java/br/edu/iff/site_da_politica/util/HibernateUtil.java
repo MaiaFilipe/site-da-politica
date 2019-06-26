@@ -5,7 +5,7 @@
  */
 package br.edu.iff.site_da_politica.util;
 
-import br.edu.iff.site_da_politica.Usuario_Comum;
+import br.edu.iff.site_da_politica.UsuarioComum;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -33,7 +33,7 @@ public class HibernateUtil {
     static {
         AnnotationConfiguration cfg = new AnnotationConfiguration();
         cfg.configure();
-        cfg.addAnnotatedClass(Usuario_Comum.class);
+        cfg.addAnnotatedClass(UsuarioComum.class);
         factory = cfg.buildSessionFactory();
     }
 

@@ -76,11 +76,11 @@ public class UsuarioComumServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-            Usuario_Comum usuarioc = new Usuario_Comum();
+            UsuarioComum usuarioc = new UsuarioComum();
             usuarioc.setcodigoUsuarioComum(Integer.parseInt(request.getParameter("cd_usuario_comum")));
             usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
             usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
-            usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
+            //usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
             usuarioc.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
             usuarioc.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
             usuarioc.setSenha(request.getParameter("nm_senha"));
