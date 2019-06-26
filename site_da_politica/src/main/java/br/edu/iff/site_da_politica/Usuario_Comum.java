@@ -1,10 +1,14 @@
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -15,6 +19,7 @@ import javax.persistence.Table;
 public class Usuario_Comum implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "cd_usuario_comum")
     private Integer codigoUsuarioComum;
     
@@ -46,7 +51,8 @@ public class Usuario_Comum implements Serializable {
     private String nickNameUsuarioComum;
 
     @Column(name = "dt_nascimento")
-    private Integer dataNascimento;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataNascimento;
     
     
     /**
@@ -194,14 +200,14 @@ public class Usuario_Comum implements Serializable {
     /**
      * @return the dataNascimento
      */
-    public Integer getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
     /**
      * @param dataNascimento the dataNascimento to set
      */
-    public void setDataNascimento(Integer dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

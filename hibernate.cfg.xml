@@ -43,10 +43,10 @@ Contributor(s):
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:postgresql://localhost/site-da-politica</property> <!-- BD Mane -->
+        <property name="connection.url">jdbc:postgresql://localhost/crud</property> <!-- BD Mane -->
         <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
         <property name="connection.username">postgres</property> <!-- DB User -->
-        <property name="connection.password">postgres</property> <!-- DB Password -->
+        <property name="connection.password">123456</property> <!-- DB Password -->
    		
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- DB Dialect -->
         <property name="show_sql">true</property> <!-- Show SQL in console -->

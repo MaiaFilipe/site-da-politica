@@ -28,9 +28,8 @@
 				<label for="first_name">Nome:</label><br>
 				<input type="text" name="nm_usuario_politico" id="first_name"><br><br>
 
-				<!-- <label for="last_name">Sobrenome:</label><br>
+				<label for="last_name">Sobrenome:</label><br>
 				<input type="text" name="last_name" id="last_name"><br><br>
-                                -->
                                 
 				<label for="email">Email:</label><br>
 				<input type="text" name="ds_email" id="email"><br><br>

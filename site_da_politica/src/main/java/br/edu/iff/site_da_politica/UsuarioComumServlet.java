@@ -6,12 +6,15 @@
  */
 package br.edu.iff.site_da_politica;
 
+import br.edu.iff.site_da_politica.util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -84,7 +87,12 @@ public class UsuarioComumServlet extends HttpServlet {
             usuarioc.setDescricaoPosicao(request.getParameter("ds_posicao"));
             usuarioc.setNomeUsuarioComum(request.getParameter("nm_usuario_comum"));
             usuarioc.setNickNameUsuarioComum(request.getParameter("nm_nick_name_comum"));
-            usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
+            //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
+            Session sessionRecheio;
+            sessionRecheio = HibernateUtil.getSession();
+            Transaction tr = sessionRecheio.beginTransaction();
+            sessionRecheio.saveOrUpdate(usuarioc);
+            tr.commit();
     }
 
     /**

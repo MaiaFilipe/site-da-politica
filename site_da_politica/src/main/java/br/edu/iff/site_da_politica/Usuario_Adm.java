@@ -16,20 +16,6 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "usuario_adm")
 public class Usuario_Adm implements Serializable {
-
-    /**
-     * @return the dataNascimento
-     */
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    /**
-     * @param dataNascimento the dataNascimento to set
-     */
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
     
     @Id
     @Column(name = "cd_usuario_adm")
@@ -64,6 +50,20 @@ public class Usuario_Adm implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataNascimento;
 
+    /**
+     * @return the dataNascimento
+     */
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    /**
+     * @param dataNascimento the dataNascimento to set
+     */
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+    
     /**
      * @return the codigoUsuarioAdm
      */

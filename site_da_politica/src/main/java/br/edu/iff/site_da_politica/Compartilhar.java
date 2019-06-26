@@ -17,6 +17,26 @@ import javax.persistence.Table;
 @Table(name = "compartilhar")
 public class Compartilhar implements Serializable {
 
+    @Id
+    @Column(name = "cd_compartilha")
+    private Integer codigoCompartilhar;
+    
+    @Id
+    @Column(name = "cd_usuario_comum")
+    private Integer codigoUsuarioComum;
+    
+    @Id
+    @Column(name = "cd_usuario_adm")
+    private Integer codigoUsuarioAdm;
+    
+    @Id
+    @Column(name = "cd_usuario_politica")
+    private Integer codigoUsuarioPolitico;
+    
+    @Id
+    @Column(name = "tm_horario")
+    private Time tempo;
+    
     /**
      * @return the codigoCompartilhar
      */
@@ -86,26 +106,4 @@ public class Compartilhar implements Serializable {
     public void setTempo(Time tempo) {
         this.tempo = tempo;
     }
-    
-    @Id
-    @Column(name = "cd_compartilha")
-    private Integer codigoCompartilhar;
-    
-    @Id
-    @Column(name = "cd_usuario_comum")
-    private Integer codigoUsuarioComum;
-    
-    @Id
-    @Column(name = "cd_usuario_adm")
-    private Integer codigoUsuarioAdm;
-    
-    @Id
-    @Column(name = "cd_usuario_politica")
-    private Integer codigoUsuarioPolitico;
-    
-    @Id
-    @Column(name = "tm_horario")
-    private Time tempo;
-
-  //CONSTRAINT pk_cd_compartilhar PRIMARY KEY (cd_compartilhar)
 }
