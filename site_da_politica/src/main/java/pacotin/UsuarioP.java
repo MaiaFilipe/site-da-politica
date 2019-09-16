@@ -9,8 +9,8 @@ package pacotin;
  *
  * @author aluno
  */
-public class UsuarioPoliticoP  extends UsuarioP{
+public abstract class UsuarioP {
     
-    
+    int codigo;
     
 }
