@@ -211,10 +211,6 @@ public class UsuarioComum implements Serializable {
         this.nrNumero = integer;
     }
 
-    void setNumeroCpf(Integer integer) {
-        this.nrNumero = integer;
-    }
-
     void setSenha(String parameter) {
         this.nmSenha = parameter;
     }

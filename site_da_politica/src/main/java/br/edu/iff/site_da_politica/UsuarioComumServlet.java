@@ -77,12 +77,16 @@ public class UsuarioComumServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
             UsuarioComum usuarioc = new UsuarioComum();
-            usuarioc.setcodigoUsuarioComum(Integer.parseInt(request.getParameter("cd_usuario_comum")));
             usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
             usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
             //usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
-            usuarioc.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
-            usuarioc.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
+            //usuarioc.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
+            String cpfXaBlau = request.getParameter("nr_cpf");
+            
+            cpfXaBlau = cpfXaBlau.replaceAll("-", "");
+            cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
+            System.out.println("cpf:"+cpfXaBlau);
+            usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
             usuarioc.setSenha(request.getParameter("nm_senha"));
             usuarioc.setDescricaoPosicao(request.getParameter("ds_posicao"));
             usuarioc.setNomeUsuarioComum(request.getParameter("nm_usuario_comum"));
