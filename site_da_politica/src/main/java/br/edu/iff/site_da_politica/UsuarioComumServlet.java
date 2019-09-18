@@ -96,7 +96,6 @@ public class UsuarioComumServlet extends HttpServlet {
             usuarioc.setDsPosicao(request.getParameter("ds_posicao"));
             usuarioc.setNmUsuarioComum(request.getParameter("nm_usuario_comum"));
             usuarioc.setNmNickNameComum(request.getParameter("nm_nick_name_comum"));
-            usuarioc.setCdUsuarioComum(100);
             
             //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
             
