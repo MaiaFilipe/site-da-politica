@@ -1,15 +1,13 @@
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Publicacao.java
-/home/aluno/site-da-politica/site_da_politica/src/main/java/pacotin/UsuarioPoliticoP.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioAdmServlet.java
-/home/aluno/site-da-politica/site_da_politica/src/main/java/pacotin/UsuarioAdmP.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Responder.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioPoliticoServlet.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Compartilhar.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Banir.java
+/home/aluno/site-da-politica/site_da_politica/src/main/java/pacotin/UsuarioControle.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Comentar.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/util/HibernateUtil.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Usuario_Politico.java
-/home/aluno/site-da-politica/site_da_politica/src/main/java/pacotin/UsuarioP.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Curtir.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/Seguir.java
 /home/aluno/site-da-politica/site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioComumServlet.java
