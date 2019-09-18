@@ -29,53 +29,56 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "UsuarioComum.findAll", query = "SELECT u FROM UsuarioComum u")
-    , @NamedQuery(name = "UsuarioComum.findByDsEmail", query = "SELECT u FROM UsuarioComum u WHERE u.dsEmail = :dsEmail")
     , @NamedQuery(name = "UsuarioComum.findByDsUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.dsUsuarioComum = :dsUsuarioComum")
     , @NamedQuery(name = "UsuarioComum.findByNrNumero", query = "SELECT u FROM UsuarioComum u WHERE u.nrNumero = :nrNumero")
     , @NamedQuery(name = "UsuarioComum.findByNrCpf", query = "SELECT u FROM UsuarioComum u WHERE u.nrCpf = :nrCpf")
     , @NamedQuery(name = "UsuarioComum.findByNmSenha", query = "SELECT u FROM UsuarioComum u WHERE u.nmSenha = :nmSenha")
     , @NamedQuery(name = "UsuarioComum.findByDsPosicao", query = "SELECT u FROM UsuarioComum u WHERE u.dsPosicao = :dsPosicao")
-    , @NamedQuery(name = "UsuarioComum.findByNmUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.nmUsuarioComum = :nmUsuarioComum")
     , @NamedQuery(name = "UsuarioComum.findByNmNickNameComum", query = "SELECT u FROM UsuarioComum u WHERE u.nmNickNameComum = :nmNickNameComum")
     , @NamedQuery(name = "UsuarioComum.findByCdUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.cdUsuarioComum = :cdUsuarioComum")
-    , @NamedQuery(name = "UsuarioComum.findByDtNascimento", query = "SELECT u FROM UsuarioComum u WHERE u.dtNascimento = :dtNascimento")})
+    , @NamedQuery(name = "UsuarioComum.findByDtNascimento", query = "SELECT u FROM UsuarioComum u WHERE u.dtNascimento = :dtNascimento")
+    , @NamedQuery(name = "UsuarioComum.findByDsEmail", query = "SELECT u FROM UsuarioComum u WHERE u.dsEmail = :dsEmail")
+    , @NamedQuery(name = "UsuarioComum.findByNmUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.nmUsuarioComum = :nmUsuarioComum")})
 public class UsuarioComum implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 2147483647)
-    @Column(name = "ds_email")
-    private String dsEmail;
-    @Size(max = 20)
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "nr_numero")
     private long nrNumero;
+    
     @Column(name = "nr_cpf")
     private Long nrCpf;
-    @Size(max = 50)
+    
     @Column(name = "nm_senha")
     private String nmSenha;
-    @Size(max = 2147483647)
+    
     @Column(name = "ds_posicao")
     private String dsPosicao;
-    @Size(max = 2147483647)
-    @Column(name = "nm_usuario_comum")
-    private String nmUsuarioComum;
+    
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 2147483647)
     @Column(name = "nm_nick_name_comum")
     private String nmNickNameComum;
+    
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "cd_usuario_comum")
     private Integer cdUsuarioComum;
+    
     @Column(name = "dt_nascimento")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dtNascimento;
+    
+    @Column(name = "ds_email")
+    private String dsEmail;
+    
+    @Column(name = "nm_usuario_comum")
+    private String nmUsuarioComum;
 
     public UsuarioComum() {
     }
@@ -88,14 +91,6 @@ public class UsuarioComum implements Serializable {
         this.cdUsuarioComum = cdUsuarioComum;
         this.nrNumero = nrNumero;
         this.nmNickNameComum = nmNickNameComum;
-    }
-
-    public String getDsEmail() {
-        return dsEmail;
-    }
-
-    public void setDsEmail(String dsEmail) {
-        this.dsEmail = dsEmail;
     }
 
     public String getDsUsuarioComum() {
@@ -138,14 +133,6 @@ public class UsuarioComum implements Serializable {
         this.dsPosicao = dsPosicao;
     }
 
-    public String getNmUsuarioComum() {
-        return nmUsuarioComum;
-    }
-
-    public void setNmUsuarioComum(String nmUsuarioComum) {
-        this.nmUsuarioComum = nmUsuarioComum;
-    }
-
     public String getNmNickNameComum() {
         return nmNickNameComum;
     }
@@ -168,6 +155,22 @@ public class UsuarioComum implements Serializable {
 
     public void setDtNascimento(Date dtNascimento) {
         this.dtNascimento = dtNascimento;
+    }
+
+    public String getDsEmail() {
+        return dsEmail;
+    }
+
+    public void setDsEmail(String dsEmail) {
+        this.dsEmail = dsEmail;
+    }
+
+    public String getNmUsuarioComum() {
+        return nmUsuarioComum;
+    }
+
+    public void setNmUsuarioComum(String nmUsuarioComum) {
+        this.nmUsuarioComum = nmUsuarioComum;
     }
 
     @Override
@@ -194,41 +197,5 @@ public class UsuarioComum implements Serializable {
     public String toString() {
         return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
     }
-
-    void setcodigoUsuarioComum(int parseInt) {
-        this.cdUsuarioComum = parseInt;
-    }
-
-    void setDescricaoEmail(String parameter) {
-        this.dsEmail = parameter; 
-    }
-
-    void setDescricaoUsuarioComum(String parameter) {
-        this.dsUsuarioComum = parameter;
-    }
-
-    void setNumero(Integer integer) {
-        this.nrNumero = integer;
-    }
-
-    void setSenha(String parameter) {
-        this.nmSenha = parameter;
-    }
-
-    void setDescricaoPosicao(String parameter) {
-        this.dsPosicao = parameter;
-    }
-
-    void setNomeUsuarioComum(String parameter) {
-        this.nmUsuarioComum = parameter;
-    }
-
-    void setNickNameUsuarioComum(String parameter) {
-        this.nmNickNameComum = parameter;
-    }
-    /*
-    void setDataNascimento(String parameter) {
-        this.dtNascimento = parameter;
-    }
-    */
+    
 }

@@ -76,22 +76,30 @@ public class UsuarioComumServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
             UsuarioComum usuarioc = new UsuarioComum();
-            usuarioc.setDescricaoEmail(request.getParameter("ds_email"));
-            usuarioc.setDescricaoUsuarioComum(request.getParameter("ds_usuario_comum"));
-            //usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
-            //usuarioc.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
-            String cpfXaBlau = request.getParameter("nr_cpf");
+            usuarioc.setDsEmail(request.getParameter("ds_email"));
+            usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
             
+            //usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
+            
+            String num = request.getParameter("nr_numero");
+            Long numero = Long.parseLong(num);
+            usuarioc.setNrNumero(numero);
+            
+            String cpfXaBlau = request.getParameter("nr_cpf");
             cpfXaBlau = cpfXaBlau.replaceAll("-", "");
             cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
-            System.out.println("cpf:"+cpfXaBlau);
             usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
-            usuarioc.setSenha(request.getParameter("nm_senha"));
-            usuarioc.setDescricaoPosicao(request.getParameter("ds_posicao"));
-            usuarioc.setNomeUsuarioComum(request.getParameter("nm_usuario_comum"));
-            usuarioc.setNickNameUsuarioComum(request.getParameter("nm_nick_name_comum"));
+            
+            usuarioc.setNmSenha(request.getParameter("nm_senha"));
+            usuarioc.setDsPosicao(request.getParameter("ds_posicao"));
+            usuarioc.setNmUsuarioComum(request.getParameter("nm_usuario_comum"));
+            usuarioc.setNmNickNameComum(request.getParameter("nm_nick_name_comum"));
+            usuarioc.setCdUsuarioComum(100);
+            
             //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
+            
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
