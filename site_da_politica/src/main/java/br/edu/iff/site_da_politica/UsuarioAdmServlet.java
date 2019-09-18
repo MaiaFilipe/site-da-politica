@@ -78,7 +78,7 @@ public class UsuarioAdmServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        Usuario_Adm usuarioa = new Usuario_Adm();
+        UsuarioAdm usuarioa = new UsuarioAdm();
         usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
         usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
         usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));

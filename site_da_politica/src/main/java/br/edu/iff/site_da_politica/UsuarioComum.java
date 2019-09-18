@@ -6,7 +6,6 @@
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,61 +38,59 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "UsuarioComum.findByCdUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.cdUsuarioComum = :cdUsuarioComum")
     , @NamedQuery(name = "UsuarioComum.findByDsEmail", query = "SELECT u FROM UsuarioComum u WHERE u.dsEmail = :dsEmail")
     , @NamedQuery(name = "UsuarioComum.findByNmUsuarioComum", query = "SELECT u FROM UsuarioComum u WHERE u.nmUsuarioComum = :nmUsuarioComum")
-    , @NamedQuery(name = "UsuarioComum.findByDtNascimento", query = "SELECT u FROM UsuarioComum u WHERE u.dtNascimento = :dtNascimento")})
+    , @NamedQuery(name = "UsuarioComum.findByDtNascimento", query = "SELECT u FROM UsuarioComum u WHERE u.dtNascimento = :dtNascimento")
+    , @NamedQuery(name = "UsuarioComum.findByNmEstado", query = "SELECT u FROM UsuarioComum u WHERE u.nmEstado = :nmEstado")})
 public class UsuarioComum implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 100)
+    @Size(max = 2147483647)
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
     
-    @NotNull
     @Basic(optional = false)
+    @NotNull
     @Column(name = "nr_numero")
     private Long nrNumero;
     
-    @NotNull
     @Column(name = "nr_cpf")
     private Long nrCpf;
     
     @Size(max = 50)
-    @NotNull
     @Column(name = "nm_senha")
     private String nmSenha;
     
-    @NotNull
     @Size(max = 2147483647)
     @Column(name = "ds_posicao")
     private String dsPosicao;
     
     @Basic(optional = false)
     @NotNull
-    @Size(max = 30)
+    @Size(min = 1, max = 2147483647)
     @Column(name = "nm_nick_name_comum")
     private String nmNickNameComum;
     
     @Id
-    @Basic(optional = false)
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
     @SequenceGenerator(name="meugerador", sequenceName = "sq_usuario")
     @Column(name = "cd_usuario_comum")
     private Integer cdUsuarioComum;
     
-    @NotNull
     @Size(max = 2147483647)
     @Column(name = "ds_email")
     private String dsEmail;
     
-    @NotNull
     @Size(max = 2147483647)
     @Column(name = "nm_usuario_comum")
     private String nmUsuarioComum;
     
-    @NotNull
     @Size(max = 2147483647)
     @Column(name = "dt_nascimento")
     private String dtNascimento;
+    
+    @Size(max = 2147483647)
+    @Column(name = "nm_estado")
+    private String nmEstado;
 
     public UsuarioComum() {
     }
@@ -186,6 +183,14 @@ public class UsuarioComum implements Serializable {
 
     public void setDtNascimento(String dtNascimento) {
         this.dtNascimento = dtNascimento;
+    }
+
+    public String getNmEstado() {
+        return nmEstado;
+    }
+
+    public void setNmEstado(String nmEstado) {
+        this.nmEstado = nmEstado;
     }
 
     @Override

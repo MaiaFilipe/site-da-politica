@@ -73,7 +73,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-            Usuario_Politico usuariop = new Usuario_Politico();
+            UsuarioPolitico usuariop = new UsuarioPolitico();
             usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
             usuariop.setDescricaoEmail(request.getParameter("ds_email"));
             usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));

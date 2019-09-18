@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2019-09-18 11:55:04 BRT
+-- Started on 2019-09-18 17:09:13 BRT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -166,7 +166,7 @@ CREATE TABLE seguir (
 ALTER TABLE seguir OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 41833)
+-- TOC entry 192 (class 1259 OID 50025)
 -- Name: sq_usuario; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -174,7 +174,7 @@ CREATE SEQUENCE sq_usuario
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
-    NO MAXVALUE
+    MAXVALUE 1000
     CACHE 1;
 
 
@@ -216,7 +216,8 @@ CREATE TABLE usuario_comum (
     cd_usuario_comum integer NOT NULL,
     ds_email character varying,
     nm_usuario_comum character varying,
-    dt_nascimento character varying
+    dt_nascimento character varying,
+    nm_estado character varying
 );
 
 
@@ -327,7 +328,7 @@ COPY seguir (cd_usuario_comum, cd_usuario_adm, cd_usuario_politico, cd_seguir) F
 -- Name: sq_usuario; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('sq_usuario', 4, true);
+SELECT pg_catalog.setval('sq_usuario', 1, false);
 
 
 --
@@ -346,7 +347,8 @@ COPY usuario_adm (ds_email, ds_usuario_adm, nr_numero, nr_cpf, nm_senha, ds_posi
 -- Data for Name: usuario_comum; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY usuario_comum (ds_usuario_comum, nr_numero, nr_cpf, nm_senha, ds_posicao, nm_nick_name_comum, cd_usuario_comum, ds_email, nm_usuario_comum, dt_nascimento) FROM stdin;
+COPY usuario_comum (ds_usuario_comum, nr_numero, nr_cpf, nm_senha, ds_posicao, nm_nick_name_comum, cd_usuario_comum, ds_email, nm_usuario_comum, dt_nascimento, nm_estado) FROM stdin;
+oi	1212312312312	45454545454	123123	esquerda	filipin	154	filexicientista@gmail.com	Luiz Filipe	2002-03-25	RJ
 \.
 
 
@@ -530,7 +532,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-09-18 11:55:04 BRT
+-- Completed on 2019-09-18 17:09:13 BRT
 
 --
 -- PostgreSQL database dump complete

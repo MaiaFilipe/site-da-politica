@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "usuario_politico")
-public class Usuario_Politico implements Serializable {
+public class UsuarioPolitico implements Serializable {
     
     @Id
     @GeneratedValue

@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "usuario_adm")
-public class Usuario_Adm implements Serializable {
+public class UsuarioAdm implements Serializable {
     
     @Id
     @Column(name = "cd_usuario_adm")

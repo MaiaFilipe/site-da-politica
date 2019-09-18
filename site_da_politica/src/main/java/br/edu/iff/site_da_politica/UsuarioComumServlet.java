@@ -80,8 +80,7 @@ public class UsuarioComumServlet extends HttpServlet {
             UsuarioComum usuarioc = new UsuarioComum();
             usuarioc.setDsEmail(request.getParameter("ds_email"));
             usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
-            
-            //usuarioc.setNomeEstado(request.getParameter("nm_estado")); //criação desta tabela no BD
+            usuarioc.setNmEstado(request.getParameter("nm_estado"));
             
             String num = request.getParameter("nr_numero");
             Long numero = Long.parseLong(num);
@@ -100,6 +99,7 @@ public class UsuarioComumServlet extends HttpServlet {
             String datinha = request.getParameter("dt_nascimento");
             usuarioc.setDtNascimento(datinha);
             System.out.println("Data:" + datinha);
+            
             
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
