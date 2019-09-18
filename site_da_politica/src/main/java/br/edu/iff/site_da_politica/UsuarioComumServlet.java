@@ -97,7 +97,9 @@ public class UsuarioComumServlet extends HttpServlet {
             usuarioc.setNmUsuarioComum(request.getParameter("nm_usuario_comum"));
             usuarioc.setNmNickNameComum(request.getParameter("nm_nick_name_comum"));
             
-            //usuarioc.setDataNascimento(request.getParameter("dt_nascimento"));
+            String datinha = request.getParameter("dt_nascimento");
+            usuarioc.setDtNascimento(datinha);
+            System.out.println("Data:" + datinha);
             
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
