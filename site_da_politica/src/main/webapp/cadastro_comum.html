@@ -18,18 +18,19 @@
 <body>
 	<body background=""> 
 	<div id = block>
-		<center><h1>Cadastro usu·rio Adm</h1></center>
+		<center><h1>Cadastro usu√°rio Comum</h1></center>
 
 		<div class="left">
-			<form method = "POST" action = "UsuarioAdmServlet">
-				<label for="user_name">Usu·rio:</label><br>
-				<input type="text" name="nm_nick_politico" id="user_name"><br><br>
+			<form method = "POST" action = "UsuarioComumServlet">
+				<label for="user_name">Usu√°rio:</label><br>
+				<input type="text" name="nm_nick_name_comum" id="user_name"><br><br>
 
 				<label for="first_name">Nome:</label><br>
-				<input type="text" name="nm_usuario_politico" id="first_name"><br><br>
+				<input type="text" name="nm_usuario_comum" id="first_name"><br><br>
 
-				<label for="last_name">Sobrenome:</label><br>
+				<!-- <label for="last_name">Sobrenome:</label><br>
 				<input type="text" name="last_name" id="last_name"><br><br>
+                                -->
                                 
 				<label for="email">Email:</label><br>
 				<input type="text" name="ds_email" id="email"><br><br>
@@ -39,52 +40,55 @@
 
 				<label for="cpf">Cpf:</label><br>
 				<input type="cpf" name="nr_cpf" id="cpf" placeholder="Ex.: 000.000.000-00" maxlength="14" autocomplete="on"><br><br>
+				
+                                <label for="numero">N√∫mero:</label><br>
+				<input type="text" name="nr_numero" id="numero" maxlength="13" autocomplete="on"><br><br>
 
+                                <label for="descricao">Descri√ß√£o:</label><br>
+                                 <input type="text" name="ds_usuario_comum" id="descricao"><br><br>
+                        
 			</div>
-			Data de nascimento: <input type="date" name = ""><br><br>
+			Data de nascimento: <input type="date" name = "dt_nascimento"><br><br>
+                        
 			Estado:<br>
-			<select name="estado">
+			<select name="nm_estado">
 				<option value="AC">Acre (AC)</option>
 				<option value="AL">Alagoas (AL)</option>
-				<option value="AP">Amap· (AP)</option>
+				<option value="AP">Amap√° (AP)</option>
 				<option value="AM">Amazonas (AM)</option>
 				<option value="BA">Bahia (BA)</option>
-				<option value="CE">Cear· (CE)</option>
+				<option value="CE">Cear√° (CE)</option>
 				<option value="DF">Distrito Federal (DF)</option>
-				<option value="ES">EspÌrito Santo (ES)</option>
-				<option value="GO">Goi·s (GO)</option>
-				<option value="MA">Maranh„o (MA)</option>
+				<option value="ES">Esp√≠rito Santo (ES)</option>
+				<option value="GO">Goi√°s (GO)</option>
+				<option value="MA">Maranh√£o (MA)</option>
 				<option value="MT">Mato Grosso (MT)</option>
 				<option value="MS">Mato Grosso do Sul (MS)</option>
 				<option value="MG">Minas Gerais (MG)</option>
-				<option value="PA">Par· (PA)</option>
-				<option value="PB">ParaÌba (PB)</option>
-				<option value="PR">Paran· (PR)</option>
+				<option value="PA">Par√° (PA)</option>
+				<option value="PB">Para√≠ba (PB)</option>
+				<option value="PR">Paran√° (PR)</option>
 				<option value="PE">Pernambuco (PE)</option>
-				<option value="PI">PiauÌ (PI)</option>
+				<option value="PI">Piau√≠ (PI)</option>
 				<option value="RJ">Rio de Janeiro (RJ)</option>
 				<option value="RN">Rio Grande do Norte (RN)</option>
 				<option value="RS">Rio Grande do Sul (RS)</option>
-				<option value="RO">RondÙnia (RO)</option>
+				<option value="RO">Rond√¥nia (RO)</option>
 				<option value="RR">Roraima (RR)</option>
 				<option value="SC">Santa Catarina (SC)</option>
-				<option value="SP">S„o Paulo (SP)</option>
+				<option value="SP">S√£o Paulo (SP)</option>
 				<option value="SE">Sergipe (SE)</option>
 				<option value="TO">Tocantins (TO)</option>
 			</select><br><br>
-                        
-                        Partido:<br>
-                        <select name="partido">
-				<option value="AC">Acre (AC)</option>
-			</select><br><br>
 
-			PosiÁ„o polÌtica:<br>
-			<select name="ds_posicao_politica">
+			Posi√ß√£o pol√≠tica:<br>
+			<select name="ds_posicao">
 				<option value="direita">Direita</option>
 				<option value="esquerda">Esquerda</option>
 				<option value="centro">Centro</option>
-				<option value="semResposta">Prefiro n„o responder</option>
+				<option value="semResposta">Prefiro n√£o responder</option>
 			</select><br><br>
+
 			<input type="submit" value="Confirmar">
 		</form>
 	</div>

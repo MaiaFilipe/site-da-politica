@@ -75,7 +75,6 @@ public class UsuarioComumServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         
             UsuarioComum usuarioc = new UsuarioComum();
             usuarioc.setDsEmail(request.getParameter("ds_email"));
@@ -100,12 +99,14 @@ public class UsuarioComumServlet extends HttpServlet {
             usuarioc.setDtNascimento(datinha);
             System.out.println("Data:" + datinha);
             
-            
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.saveOrUpdate(usuarioc);
             tr.commit();
+            
+            response.sendRedirect("index.html");
+            processRequest(request, response);
     }
 
     /**

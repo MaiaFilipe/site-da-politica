@@ -43,7 +43,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class UsuarioComum implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 2147483647)
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
     
@@ -52,10 +51,11 @@ public class UsuarioComum implements Serializable {
     @Column(name = "nr_numero")
     private Long nrNumero;
     
+    @NotNull
     @Column(name = "nr_cpf")
     private Long nrCpf;
     
-    @Size(max = 50)
+    @NotNull
     @Column(name = "nm_senha")
     private String nmSenha;
     
@@ -63,9 +63,7 @@ public class UsuarioComum implements Serializable {
     @Column(name = "ds_posicao")
     private String dsPosicao;
     
-    @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 2147483647)
     @Column(name = "nm_nick_name_comum")
     private String nmNickNameComum;
     
@@ -76,19 +74,18 @@ public class UsuarioComum implements Serializable {
     @Column(name = "cd_usuario_comum")
     private Integer cdUsuarioComum;
     
-    @Size(max = 2147483647)
+    @NotNull
     @Column(name = "ds_email")
     private String dsEmail;
     
-    @Size(max = 2147483647)
+    @NotNull
     @Column(name = "nm_usuario_comum")
     private String nmUsuarioComum;
     
-    @Size(max = 2147483647)
+    @NotNull
     @Column(name = "dt_nascimento")
     private String dtNascimento;
     
-    @Size(max = 2147483647)
     @Column(name = "nm_estado")
     private String nmEstado;
 
