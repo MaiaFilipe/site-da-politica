@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2019-09-18 17:09:13 BRT
+-- Started on 2019-09-19 10:27:57 BRT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,7 +39,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 181 (class 1259 OID 41747)
+-- TOC entry 181 (class 1259 OID 16653)
 -- Name: banir; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -54,7 +54,7 @@ CREATE TABLE banir (
 ALTER TABLE banir OWNER TO postgres;
 
 --
--- TOC entry 182 (class 1259 OID 41750)
+-- TOC entry 182 (class 1259 OID 16656)
 -- Name: comentar; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -69,7 +69,7 @@ CREATE TABLE comentar (
 ALTER TABLE comentar OWNER TO postgres;
 
 --
--- TOC entry 183 (class 1259 OID 41753)
+-- TOC entry 183 (class 1259 OID 16659)
 -- Name: compartilhar; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -86,7 +86,7 @@ CREATE TABLE compartilhar (
 ALTER TABLE compartilhar OWNER TO postgres;
 
 --
--- TOC entry 184 (class 1259 OID 41756)
+-- TOC entry 184 (class 1259 OID 16662)
 -- Name: curtir; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -101,7 +101,7 @@ CREATE TABLE curtir (
 ALTER TABLE curtir OWNER TO postgres;
 
 --
--- TOC entry 185 (class 1259 OID 41759)
+-- TOC entry 185 (class 1259 OID 16665)
 -- Name: denuncia; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -118,7 +118,7 @@ CREATE TABLE denuncia (
 ALTER TABLE denuncia OWNER TO postgres;
 
 --
--- TOC entry 186 (class 1259 OID 41765)
+-- TOC entry 186 (class 1259 OID 16671)
 -- Name: publicacao; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -135,7 +135,7 @@ CREATE TABLE publicacao (
 ALTER TABLE publicacao OWNER TO postgres;
 
 --
--- TOC entry 187 (class 1259 OID 41768)
+-- TOC entry 187 (class 1259 OID 16674)
 -- Name: responder; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -151,7 +151,7 @@ CREATE TABLE responder (
 ALTER TABLE responder OWNER TO postgres;
 
 --
--- TOC entry 188 (class 1259 OID 41771)
+-- TOC entry 188 (class 1259 OID 16677)
 -- Name: seguir; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -166,7 +166,7 @@ CREATE TABLE seguir (
 ALTER TABLE seguir OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 50025)
+-- TOC entry 192 (class 1259 OID 16741)
 -- Name: sq_usuario; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -181,7 +181,7 @@ CREATE SEQUENCE sq_usuario
 ALTER TABLE sq_usuario OWNER TO postgres;
 
 --
--- TOC entry 189 (class 1259 OID 41774)
+-- TOC entry 189 (class 1259 OID 16682)
 -- Name: usuario_adm; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -202,7 +202,7 @@ CREATE TABLE usuario_adm (
 ALTER TABLE usuario_adm OWNER TO postgres;
 
 --
--- TOC entry 190 (class 1259 OID 41780)
+-- TOC entry 190 (class 1259 OID 16688)
 -- Name: usuario_comum; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -224,7 +224,7 @@ CREATE TABLE usuario_comum (
 ALTER TABLE usuario_comum OWNER TO postgres;
 
 --
--- TOC entry 191 (class 1259 OID 41786)
+-- TOC entry 191 (class 1259 OID 16694)
 -- Name: usuario_politico; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -243,7 +243,7 @@ CREATE TABLE usuario_politico (
 ALTER TABLE usuario_politico OWNER TO postgres;
 
 --
--- TOC entry 2206 (class 0 OID 41747)
+-- TOC entry 2206 (class 0 OID 16653)
 -- Dependencies: 181
 -- Data for Name: banir; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -253,7 +253,7 @@ COPY banir ("cd_ usuario_adm", cd_usuario_comum, cd_usuario_politico, cd_banir) 
 
 
 --
--- TOC entry 2207 (class 0 OID 41750)
+-- TOC entry 2207 (class 0 OID 16656)
 -- Dependencies: 182
 -- Data for Name: comentar; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -263,7 +263,7 @@ COPY comentar (cd_comentar, cd_usuario_adm, cd_usuario_politico, cd_usuario_comu
 
 
 --
--- TOC entry 2208 (class 0 OID 41753)
+-- TOC entry 2208 (class 0 OID 16659)
 -- Dependencies: 183
 -- Data for Name: compartilhar; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -273,7 +273,7 @@ COPY compartilhar (cd_compartilhar, cd_usuario_comum, cd_usuario_adm, cd_usuario
 
 
 --
--- TOC entry 2209 (class 0 OID 41756)
+-- TOC entry 2209 (class 0 OID 16662)
 -- Dependencies: 184
 -- Data for Name: curtir; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -283,7 +283,7 @@ COPY curtir (cd_curtir, cd_usuario_comum, cd_usuario_adm, cd_usuario_politico) F
 
 
 --
--- TOC entry 2210 (class 0 OID 41759)
+-- TOC entry 2210 (class 0 OID 16665)
 -- Dependencies: 185
 -- Data for Name: denuncia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -293,7 +293,7 @@ COPY denuncia (cd_denuncia, cd_publicacao, cd_usuario_comum, cd_usuario_adm, ds_
 
 
 --
--- TOC entry 2211 (class 0 OID 41765)
+-- TOC entry 2211 (class 0 OID 16671)
 -- Dependencies: 186
 -- Data for Name: publicacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -303,7 +303,7 @@ COPY publicacao (dt_data, tm_horario, cd_publicacao, fk_cd_usuario_politico, fk_
 
 
 --
--- TOC entry 2212 (class 0 OID 41768)
+-- TOC entry 2212 (class 0 OID 16674)
 -- Dependencies: 187
 -- Data for Name: responder; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -313,7 +313,7 @@ COPY responder (cd_resposta, cd_usuario_comum, cd_usuario_politico, cd_usuario_a
 
 
 --
--- TOC entry 2213 (class 0 OID 41771)
+-- TOC entry 2213 (class 0 OID 16677)
 -- Dependencies: 188
 -- Data for Name: seguir; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -328,11 +328,11 @@ COPY seguir (cd_usuario_comum, cd_usuario_adm, cd_usuario_politico, cd_seguir) F
 -- Name: sq_usuario; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('sq_usuario', 1, false);
+SELECT pg_catalog.setval('sq_usuario', 2, true);
 
 
 --
--- TOC entry 2214 (class 0 OID 41774)
+-- TOC entry 2214 (class 0 OID 16682)
 -- Dependencies: 189
 -- Data for Name: usuario_adm; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -342,18 +342,20 @@ COPY usuario_adm (ds_email, ds_usuario_adm, nr_numero, nr_cpf, nm_senha, ds_posi
 
 
 --
--- TOC entry 2215 (class 0 OID 41780)
+-- TOC entry 2215 (class 0 OID 16688)
 -- Dependencies: 190
 -- Data for Name: usuario_comum; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY usuario_comum (ds_usuario_comum, nr_numero, nr_cpf, nm_senha, ds_posicao, nm_nick_name_comum, cd_usuario_comum, ds_email, nm_usuario_comum, dt_nascimento, nm_estado) FROM stdin;
-oi	1212312312312	45454545454	123123	esquerda	filipin	154	filexicientista@gmail.com	Luiz Filipe	2002-03-25	RJ
+descriÃ§Ã£o	312312312312	12312312312	123	esquerda	filipin	53	lfilipesmaia@gmail.com	Filipe	2002-03-25	RJ
+ad	2312312312313	12132123123	123	direita	asd	50	ad	asd	2002-03-25	AC
+ad	2312312312313	12132123123	123	direita	asd	100	ad	asd	2002-03-25	AC
 \.
 
 
 --
--- TOC entry 2216 (class 0 OID 41786)
+-- TOC entry 2216 (class 0 OID 16694)
 -- Dependencies: 191
 -- Data for Name: usuario_politico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -363,7 +365,7 @@ COPY usuario_politico (nm_usuario_politico, nr_cpf, ds_email, ds_usuario_politic
 
 
 --
--- TOC entry 2064 (class 2606 OID 41793)
+-- TOC entry 2064 (class 2606 OID 16701)
 -- Name: pk_cd_banir; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -372,7 +374,7 @@ ALTER TABLE ONLY banir
 
 
 --
--- TOC entry 2066 (class 2606 OID 41795)
+-- TOC entry 2066 (class 2606 OID 16703)
 -- Name: pk_cd_comentar; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -381,7 +383,7 @@ ALTER TABLE ONLY comentar
 
 
 --
--- TOC entry 2068 (class 2606 OID 41797)
+-- TOC entry 2068 (class 2606 OID 16705)
 -- Name: pk_cd_compartilhar; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -390,7 +392,7 @@ ALTER TABLE ONLY compartilhar
 
 
 --
--- TOC entry 2070 (class 2606 OID 41799)
+-- TOC entry 2070 (class 2606 OID 16707)
 -- Name: pk_cd_curtir; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -399,7 +401,7 @@ ALTER TABLE ONLY curtir
 
 
 --
--- TOC entry 2073 (class 2606 OID 41801)
+-- TOC entry 2073 (class 2606 OID 16709)
 -- Name: pk_cd_denuncia; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -408,7 +410,7 @@ ALTER TABLE ONLY denuncia
 
 
 --
--- TOC entry 2078 (class 2606 OID 41803)
+-- TOC entry 2078 (class 2606 OID 16711)
 -- Name: pk_cd_publicacao; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -417,7 +419,7 @@ ALTER TABLE ONLY publicacao
 
 
 --
--- TOC entry 2080 (class 2606 OID 41805)
+-- TOC entry 2080 (class 2606 OID 16713)
 -- Name: pk_cd_resposta; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -426,7 +428,7 @@ ALTER TABLE ONLY responder
 
 
 --
--- TOC entry 2082 (class 2606 OID 41807)
+-- TOC entry 2082 (class 2606 OID 16715)
 -- Name: pk_cd_seguir; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -435,7 +437,7 @@ ALTER TABLE ONLY seguir
 
 
 --
--- TOC entry 2084 (class 2606 OID 41809)
+-- TOC entry 2084 (class 2606 OID 16717)
 -- Name: pk_cd_usuario_adm; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -444,7 +446,7 @@ ALTER TABLE ONLY usuario_adm
 
 
 --
--- TOC entry 2086 (class 2606 OID 41811)
+-- TOC entry 2086 (class 2606 OID 16719)
 -- Name: pk_cd_usuario_comum; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -453,7 +455,7 @@ ALTER TABLE ONLY usuario_comum
 
 
 --
--- TOC entry 2088 (class 2606 OID 41813)
+-- TOC entry 2088 (class 2606 OID 16721)
 -- Name: pk_cd_usuario_politico; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -462,7 +464,7 @@ ALTER TABLE ONLY usuario_politico
 
 
 --
--- TOC entry 2071 (class 1259 OID 41814)
+-- TOC entry 2071 (class 1259 OID 16722)
 -- Name: fki_cd_post; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -470,7 +472,7 @@ CREATE INDEX fki_cd_post ON denuncia USING btree (cd_publicacao);
 
 
 --
--- TOC entry 2074 (class 1259 OID 41815)
+-- TOC entry 2074 (class 1259 OID 16723)
 -- Name: fki_cd_usuario_adm; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -478,7 +480,7 @@ CREATE INDEX fki_cd_usuario_adm ON publicacao USING btree (fk_cd_usuario_adm);
 
 
 --
--- TOC entry 2075 (class 1259 OID 41816)
+-- TOC entry 2075 (class 1259 OID 16724)
 -- Name: fki_cd_usuario_comum; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -486,7 +488,7 @@ CREATE INDEX fki_cd_usuario_comum ON publicacao USING btree (fk_cd_usuario_comum
 
 
 --
--- TOC entry 2076 (class 1259 OID 41817)
+-- TOC entry 2076 (class 1259 OID 16725)
 -- Name: fki_cd_usuario_politico; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -494,7 +496,7 @@ CREATE INDEX fki_cd_usuario_politico ON publicacao USING btree (fk_cd_usuario_po
 
 
 --
--- TOC entry 2089 (class 2606 OID 41818)
+-- TOC entry 2089 (class 2606 OID 16726)
 -- Name: fk_cd_usuario_adm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -503,7 +505,7 @@ ALTER TABLE ONLY publicacao
 
 
 --
--- TOC entry 2090 (class 2606 OID 41823)
+-- TOC entry 2090 (class 2606 OID 16731)
 -- Name: fk_cd_usuario_comum; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -512,7 +514,7 @@ ALTER TABLE ONLY publicacao
 
 
 --
--- TOC entry 2091 (class 2606 OID 41828)
+-- TOC entry 2091 (class 2606 OID 16736)
 -- Name: fk_cd_usuario_politico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -532,7 +534,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-09-18 17:09:13 BRT
+-- Completed on 2019-09-19 10:27:59 BRT
 
 --
 -- PostgreSQL database dump complete
