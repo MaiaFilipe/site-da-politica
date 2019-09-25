@@ -6,12 +6,24 @@
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.util.Date;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -19,110 +31,154 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "publicacao")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Publicacao.findAll", query = "SELECT p FROM Publicacao p")
+    , @NamedQuery(name = "Publicacao.findByDtData", query = "SELECT p FROM Publicacao p WHERE p.dtData = :dtData")
+    , @NamedQuery(name = "Publicacao.findByTmHorario", query = "SELECT p FROM Publicacao p WHERE p.tmHorario = :tmHorario")
+    , @NamedQuery(name = "Publicacao.findByCdPublicacao", query = "SELECT p FROM Publicacao p WHERE p.cdPublicacao = :cdPublicacao")
+    , @NamedQuery(name = "Publicacao.findByTitulo", query = "SELECT p FROM Publicacao p WHERE p.titulo = :titulo")
+    , @NamedQuery(name = "Publicacao.findByTexto", query = "SELECT p FROM Publicacao p WHERE p.texto = :texto")})
 public class Publicacao implements Serializable {
 
-    @Id
-    @Column(name = "cd_publicacao")
-    private Integer codigoPublicacao;
-    
+    private static final long serialVersionUID = 1L;
     @Column(name = "dt_data")
-    private Date data;
+    @Temporal(TemporalType.DATE)
+    @NotNull
+    private String dtData;
     
     @Column(name = "tm_horario")
-    private Time horario;
+    @Temporal(TemporalType.TIME)
+    private Date tmHorario;
     
-    @Column(name = "fk_cd_usuario_politico")
-    private Integer codigoUsuarioPolitico;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
+    @SequenceGenerator(name="meugerador", sequenceName = "sq_publicacao")
+    @Column(name = "cd_publicacao")
+    private Integer cdPublicacao;
+    
+    @Size(max = 2147483647)
+    @Column(name = "titulo")
+    private String titulo;
+    
+    @Size(max = 2147483647)
+    @Column(name = "texto")
+    private String texto;
+    
+    @JoinColumn(name = "fk_cd_usuario_adm", referencedColumnName = "cd_usuario_adm")
+    @ManyToOne
+    private UsuarioAdm fkCdUsuarioAdm;
+    
+    @JoinColumn(name = "fk_cd_usuario_comum", referencedColumnName = "cd_usuario_comum")
+    @ManyToOne
+    private UsuarioComum fkCdUsuarioComum;
+    
+    @JoinColumn(name = "fk_cd_usuario_politico", referencedColumnName = "cd_usuario_politico")
+    @ManyToOne
+    private UsuarioPolitico fkCdUsuarioPolitico;
 
-    @Column(name = "fk_cd_usuario_comum")
-    private Integer codigoUsuarioComum;
-
-    @Column(name = "fk_cd_usuario_adm")
-    private Integer codigoUsuarioAdm;
-
-    //CONSTRAINT pk_cd_publicacao PRIMARY KEY (cd_publicacao);
-
-    /**
-     * @return the codigoPublicacao
-     */
-    public Integer getCodigoPublicacao() {
-        return codigoPublicacao;
+    public Publicacao() {
     }
 
-    /**
-     * @param codigoPublicacao the codigoPublicacao to set
-     */
-    public void setCodigoPublicacao(Integer codigoPublicacao) {
-        this.codigoPublicacao = codigoPublicacao;
+    public Publicacao(Integer cdPublicacao) {
+        this.cdPublicacao = cdPublicacao;
     }
 
-    /**
-     * @return the data
-     */
-    public Date getData() {
-        return data;
+    public String getDtData() {
+        return dtData;
     }
 
-    /**
-     * @param data the data to set
-     */
-    public void setData(Date data) {
-        this.data = data;
+    public void setDtData(String dtData) {
+        this.dtData = dtData;
     }
 
-    /**
-     * @return the horario
-     */
-    public Time getHorario() {
-        return horario;
+    public Date getTmHorario() {
+        return tmHorario;
     }
 
-    /**
-     * @param horario the horario to set
-     */
-    public void setHorario(Time horario) {
-        this.horario = horario;
+    public void setTmHorario(Date tmHorario) {
+        this.tmHorario = tmHorario;
     }
 
-    /**
-     * @return the codigoUsuarioPolitico
-     */
-    public Integer getCodigoUsuarioPolitico() {
-        return codigoUsuarioPolitico;
+    public Integer getCdPublicacao() {
+        return cdPublicacao;
     }
 
-    /**
-     * @param codigoUsuarioPolitico the codigoUsuarioPolitico to set
-     */
-    public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
-        this.codigoUsuarioPolitico = codigoUsuarioPolitico;
+    public void setCdPublicacao(Integer cdPublicacao) {
+        this.cdPublicacao = cdPublicacao;
     }
 
-    /**
-     * @return the codigoUsuarioComum
-     */
-    public Integer getCodigoUsuarioComum() {
-        return codigoUsuarioComum;
+    public String getTitulo() {
+        return titulo;
     }
 
-    /**
-     * @param codigoUsuarioComum the codigoUsuarioComum to set
-     */
-    public void setCodigoUsuarioComum(Integer codigoUsuarioComum) {
-        this.codigoUsuarioComum = codigoUsuarioComum;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    /**
-     * @return the codigoUsuarioAdm
-     */
-    public Integer getCodigoUsuarioAdm() {
-        return codigoUsuarioAdm;
+    public String getTexto() {
+        return texto;
     }
 
-    /**
-     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
-     */
-    public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
-        this.codigoUsuarioAdm = codigoUsuarioAdm;
+    public void setTexto(String texto) {
+        this.texto = texto;
     }
+
+    public UsuarioAdm getFkCdUsuarioAdm() {
+        return fkCdUsuarioAdm;
+    }
+
+    public void setFkCdUsuarioAdm(UsuarioAdm fkCdUsuarioAdm) {
+        this.fkCdUsuarioAdm = fkCdUsuarioAdm;
+    }
+
+    public UsuarioComum getFkCdUsuarioComum() {
+        return fkCdUsuarioComum;
+    }
+
+    public void setFkCdUsuarioComum(UsuarioComum fkCdUsuarioComum) {
+        this.fkCdUsuarioComum = fkCdUsuarioComum;
+    }
+
+    public UsuarioPolitico getFkCdUsuarioPolitico() {
+        return fkCdUsuarioPolitico;
+    }
+
+    public void setFkCdUsuarioPolitico(UsuarioPolitico fkCdUsuarioPolitico) {
+        this.fkCdUsuarioPolitico = fkCdUsuarioPolitico;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (cdPublicacao != null ? cdPublicacao.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Publicacao)) {
+            return false;
+        }
+        Publicacao other = (Publicacao) object;
+        if ((this.cdPublicacao == null && other.cdPublicacao != null) || (this.cdPublicacao != null && !this.cdPublicacao.equals(other.cdPublicacao))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "br.edu.iff.site_da_politica.Publicacao[ cdPublicacao=" + cdPublicacao + " ]";
+    }
+
+
+    void setcdPublicacao(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }
