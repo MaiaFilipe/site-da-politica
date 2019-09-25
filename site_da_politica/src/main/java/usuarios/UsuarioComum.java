@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package usuarios;
 
+import funcoes.Publicacao;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Collection;
@@ -49,16 +50,17 @@ public class UsuarioComum implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "nr_numero")
-    private BigInteger nrNumero;
+    private Long nrNumero;
+    
     @Column(name = "nr_cpf")
-    private BigInteger nrCpf;
+    private Long nrCpf;
+    
     @OneToMany(mappedBy = "fkCdUsuarioComum")
     private Collection<Publicacao> publicacaoCollection;
 
     private static final long serialVersionUID = 1L;
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
-    
     
     @NotNull
     @Column(name = "nm_senha")
@@ -217,7 +219,11 @@ public class UsuarioComum implements Serializable {
 
     @Override
     public String toString() {
+<<<<<<< HEAD:site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioComum.java
         return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
+=======
+        return "usuarios.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
+>>>>>>> df0acdc73b84147246255e9eaf74895c5e451648:site_da_politica/src/main/java/usuarios/UsuarioComum.java
     }
 
     @XmlTransient

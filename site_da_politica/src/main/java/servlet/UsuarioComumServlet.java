@@ -6,9 +6,13 @@
  */
 package servlet;
 
+<<<<<<< HEAD
 import br.edu.iff.site_da_politica.PublicacaoServlet;
 import br.edu.iff.site_da_politica.UsuarioComum;
 import br.edu.iff.site_da_politica.util.HibernateUtil;
+=======
+import util.HibernateUtil;
+>>>>>>> df0acdc73b84147246255e9eaf74895c5e451648
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
@@ -23,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import usuarios.UsuarioComum;
 
 /**
  *

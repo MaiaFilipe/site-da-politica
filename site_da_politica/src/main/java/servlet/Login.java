@@ -5,8 +5,8 @@
  */
 package servlet;
 
-import br.edu.iff.site_da_politica.UsuarioComum;
-import br.edu.iff.site_da_politica.util.HibernateUtil;
+import usuarios.UsuarioComum;
+import util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -78,7 +78,7 @@ public class Login extends HttpServlet {
         String idtext = request.getParameter("pid");
         String email = request.getParameter("ds_email");
         String senha = request.getParameter("nm_senha");
-
+        
         Session session = HibernateUtil.getSession();
         UsuarioComum usuario = (UsuarioComum) session.createQuery("from UsuarioComum where ds_email=? and nm_senha=?").setString(0, email).setString(1, senha).uniqueResult();
         session.close();

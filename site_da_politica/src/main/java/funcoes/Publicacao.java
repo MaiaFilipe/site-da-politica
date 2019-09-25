@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package funcoes;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,6 +24,9 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import usuarios.UsuarioAdm;
+import usuarios.UsuarioComum;
+import usuarios.UsuarioPolitico;
 
 /**
  *

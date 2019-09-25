@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
-
+package funcoes;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -13,35 +12,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Denuncia")
-public class Denuncia implements Serializable {
+@Table(name = "curtir")
+public class Curtir implements Serializable {
 
     /**
-     * @return the codigoDenuncia
+     * @return the codigoCurtir
      */
-    public Integer getCodigoDenuncia() {
-        return codigoDenuncia;
+    public Integer getCodigoCurtir() {
+        return codigoCurtir;
     }
 
     /**
-     * @param codigoDenuncia the codigoDenuncia to set
+     * @param codigoCurtir the codigoCurtir to set
      */
-    public void setCodigoDenuncia(Integer codigoDenuncia) {
-        this.codigoDenuncia = codigoDenuncia;
-    }
-
-    /**
-     * @return the codigoPublicacao
-     */
-    public Integer getCodigoPublicacao() {
-        return codigoPublicacao;
-    }
-
-    /**
-     * @param codigoPublicacao the codigoPublicacao to set
-     */
-    public void setCodigoPublicacao(Integer codigoPublicacao) {
-        this.codigoPublicacao = codigoPublicacao;
+    public void setCodigoCurtir(Integer codigoCurtir) {
+        this.codigoCurtir = codigoCurtir;
     }
 
     /**
@@ -73,20 +58,6 @@ public class Denuncia implements Serializable {
     }
 
     /**
-     * @return the descricao
-     */
-    public String getDescricao() {
-        return descricao;
-    }
-
-    /**
-     * @param descricao the descricao to set
-     */
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    /**
      * @return the codigoUsuarioPolitico
      */
     public Integer getCodigoUsuarioPolitico() {
@@ -99,30 +70,22 @@ public class Denuncia implements Serializable {
     public void setCodigoUsuarioPolitico(Integer codigoUsuarioPolitico) {
         this.codigoUsuarioPolitico = codigoUsuarioPolitico;
     }
-    
+
     @Id
-    @Column(name = "cd_denuncia")
-    private Integer codigoDenuncia;
-    
-    @Id
-    @Column(name = "cd_publicacao")
-    private Integer codigoPublicacao;
+    @Column(name = "cd_curtir")
+    private Integer codigoCurtir;
     
     @Id
     @Column(name = "cd_usuario_comum")
     private Integer codigoUsuarioComum;
-    
+
     @Id
     @Column(name = "cd_usuario_adm")
     private Integer codigoUsuarioAdm;
     
     @Id
-    @Column(name = "ds_descricao")
-    private String descricao;
-    
-    @Id
     @Column(name = "cd_usuario_politico")
     private Integer codigoUsuarioPolitico;
-
-    //CONSTRAINT pk_cd_denuncia PRIMARY KEY (cd_denuncia) 
+    
+  //CONSTRAINT pk_cd_curtir PRIMARY KEY (cd_curtir)
 }

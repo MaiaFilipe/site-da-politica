@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica.util;
+package util;
 
+<<<<<<< HEAD:site_da_politica/src/main/java/br/edu/iff/site_da_politica/util/HibernateUtil.java
 import br.edu.iff.site_da_politica.Publicacao;
 import br.edu.iff.site_da_politica.UsuarioAdm;
 import br.edu.iff.site_da_politica.UsuarioComum;
 import br.edu.iff.site_da_politica.UsuarioPolitico;
+=======
+import usuarios.UsuarioComum;
+import servlet.Login;
+>>>>>>> df0acdc73b84147246255e9eaf74895c5e451648:site_da_politica/src/main/java/util/HibernateUtil.java
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

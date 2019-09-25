@@ -1,5 +1,6 @@
-package br.edu.iff.site_da_politica;
+package usuarios;
 
+import funcoes.Publicacao;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
