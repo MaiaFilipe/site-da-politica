@@ -1,28 +1,26 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package servlet;
 
+import br.edu.iff.site_da_politica.UsuarioComum;
+import br.edu.iff.site_da_politica.util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.hibernate.Session;
 
 /**
  *
  * @author aluno
  */
-public class UsuarioAdmServlet extends HttpServlet {
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +39,10 @@ public class UsuarioAdmServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioAdmServlet</title>");
+            out.println("<title>Servlet Login</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioAdmServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,7 +61,6 @@ public class UsuarioAdmServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**
@@ -77,36 +74,25 @@ public class UsuarioAdmServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        UsuarioAdm usuarioa = new UsuarioAdm();
-        usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
-        usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
-        usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
         
-        String numCpf = request.getParameter("nr_cpf");
-        Long numeroCpf = Long.parseLong(numCpf);
-        usuarioa.setNrCpf(numeroCpf);
-        
-        String numNum = request.getParameter("nr_numero");
-        Long numeroNum = Long.parseLong(numNum);
-        usuarioa.setNrCpf(numeroNum);
-        
-        usuarioa.setSenha(request.getParameter("nm_senha"));
-        usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
-        usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));
-        usuarioa.setNickUsuarioAdm(request.getParameter("nm_nick_name_adm"));
+        String idtext = request.getParameter("pid");
+        String email = request.getParameter("ds_email");
+        String senha = request.getParameter("nm_senha");
 
-        String dataForm = request.getParameter("dt_nascimento");
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date dataNasc = null;
-        try {
-            dataNasc = sdf.parse(dataForm);
-        } catch (ParseException ex) {
-            //ex.printStackTrace();
-            Logger.getLogger(UsuarioAdmServlet.class.getName()).log(Level.SEVERE, null, ex);
+        Session session = HibernateUtil.getSession();
+        UsuarioComum usuario = (UsuarioComum) session.createQuery("from UsuarioComum where ds_email=? and nm_senha=?").setString(0, email).setString(1, senha).uniqueResult();
+        session.close();
+
+        if (usuario == null) {
+            response.sendRedirect("index.html");
+        } else {
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("UsuarioLogado", usuario);
+            response.sendRedirect("principal.jsp");
+
         }
-        usuarioa.setDataNascimento(dataNasc);
-
+        
+        processRequest(request, response);
     }
 
     /**

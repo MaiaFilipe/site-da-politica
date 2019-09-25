@@ -4,10 +4,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package servlet;
 
+import br.edu.iff.site_da_politica.UsuarioAdm;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aluno
  */
-public class UsuarioPoliticoServlet extends HttpServlet {
+public class UsuarioAdmServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +42,10 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioPoliticoServlet</title>");
+            out.println("<title>Servlet UsuarioAdmServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioPoliticoServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UsuarioAdmServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,20 +78,36 @@ public class UsuarioPoliticoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
+        UsuarioAdm usuarioa = new UsuarioAdm();
+        usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
+        usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
+        usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
         
-        UsuarioPolitico usuariop = new UsuarioPolitico();
-        usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
-        usuariop.setDescricaoEmail(request.getParameter("ds_email"));
-        usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
-        usuariop.setSenha(request.getParameter("nm_senha"));
-        usuariop.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
-        usuariop.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
-        usuariop.setNickPolitico(request.getParameter("nm_nick_politico"));
-
         String numCpf = request.getParameter("nr_cpf");
         Long numeroCpf = Long.parseLong(numCpf);
-        usuariop.setNrCpf(numeroCpf);
-        processRequest(request, response);
+        usuarioa.setNrCpf(numeroCpf);
+        
+        String numNum = request.getParameter("nr_numero");
+        Long numeroNum = Long.parseLong(numNum);
+        usuarioa.setNrCpf(numeroNum);
+        
+        usuarioa.setSenha(request.getParameter("nm_senha"));
+        usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
+        usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));
+        usuarioa.setNickUsuarioAdm(request.getParameter("nm_nick_name_adm"));
+
+        String dataForm = request.getParameter("dt_nascimento");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataNasc = null;
+        try {
+            dataNasc = sdf.parse(dataForm);
+        } catch (ParseException ex) {
+            //ex.printStackTrace();
+            Logger.getLogger(UsuarioAdmServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        usuarioa.setDataNascimento(dataNasc);
+
     }
 
     /**

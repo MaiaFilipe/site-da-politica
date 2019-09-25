@@ -4,8 +4,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package servlet;
 
+import br.edu.iff.site_da_politica.UsuarioComum;
 import br.edu.iff.site_da_politica.util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
