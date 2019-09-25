@@ -6,8 +6,6 @@
  */
 package servlet;
 
-
-import usuarios.UsuarioComum;
 import util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import usuarios.UsuarioComum;
 
 /**
  *

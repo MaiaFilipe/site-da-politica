@@ -6,7 +6,6 @@
 package usuarios;
 
 import funcoes.Publicacao;
-import servlet.UsuarioComumServlet;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Collection;
@@ -220,7 +219,7 @@ public class UsuarioComum implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
+        return "usuarios.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
     }
 
     @XmlTransient
