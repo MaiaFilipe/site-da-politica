@@ -1,13 +1,18 @@
 package usuarios;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -16,6 +21,17 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "usuario_adm")
 public class UsuarioAdm implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "nr_numero")
+    private long nrNumero;
+    
+    @Column(name = "nr_cpf")
+    private Long nrCpf;
+    
+    @OneToMany(mappedBy = "fkCdUsuarioAdm")
+    private Collection<Publicacao> publicacaoCollection;
     
     @Id
     @Column(name = "cd_usuario_adm")
@@ -26,12 +42,6 @@ public class UsuarioAdm implements Serializable {
 
     @Column(name = "ds_usuario_adm")
     private String descricaoUsuarioAdm;
-
-    @Column(name = "nr_numero")
-    private Integer numero;
-
-    @Column(name = "nr_cpf")
-    private Integer numeroCpf;
 
     @Column(name = "nm_senha")
     private String senha;
@@ -109,29 +119,25 @@ public class UsuarioAdm implements Serializable {
     /**
      * @return the numero
      */
-    public Integer getNumero() {
-        return numero;
-    }
+   
 
     /**
      * @param numero the numero to set
      */
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
+    
 
     /**
      * @return the numeroCpf
      */
-    public Integer getNumeroCpf() {
-        return numeroCpf;
+    public Long getnrCpf() {
+        return nrCpf;
     }
 
     /**
      * @param numeroCpf the numeroCpf to set
      */
-    public void setNumeroCpf(Integer numeroCpf) {
-        this.numeroCpf = numeroCpf;
+    public void setnrCpf(Long numeroCpf) {
+        this.nrCpf = nrCpf;
     }
 
     /**
@@ -188,5 +194,33 @@ public class UsuarioAdm implements Serializable {
      */
     public void setNickUsuarioAdm(String nickUsuarioAdm) {
         this.nickUsuarioAdm = nickUsuarioAdm;
+    }
+
+    public UsuarioAdm() {
+    }
+
+    public long getNrNumero() {
+        return nrNumero;
+    }
+
+    public void setNrNumero(long nrNumero) {
+        this.nrNumero = nrNumero;
+    }
+
+    public Long getNrCpf() {
+        return nrCpf;
+    }
+
+    public void setNrCpf(Long nrCpf) {
+        this.nrCpf = nrCpf;
+    }
+
+    @XmlTransient
+    public Collection<Publicacao> getPublicacaoCollection() {
+        return publicacaoCollection;
+    }
+
+    public void setPublicacaoCollection(Collection<Publicacao> publicacaoCollection) {
+        this.publicacaoCollection = publicacaoCollection;
     }
 }

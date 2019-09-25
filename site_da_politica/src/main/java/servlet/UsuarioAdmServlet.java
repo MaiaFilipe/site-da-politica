@@ -6,7 +6,11 @@
  */
 package servlet;
 
+<<<<<<< HEAD
 import usuarios.UsuarioAdm;
+=======
+import br.edu.iff.site_da_politica.UsuarioAdm;
+>>>>>>> 10109564d9c61866dc0ce322ce58876703b4d443
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -83,8 +87,15 @@ public class UsuarioAdmServlet extends HttpServlet {
         usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
         usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
         usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
-        usuarioa.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
-        usuarioa.setNumero(Integer.getInteger(request.getParameter("nr_numero")));
+        
+        String numCpf = request.getParameter("nr_cpf");
+        Long numeroCpf = Long.parseLong(numCpf);
+        usuarioa.setNrCpf(numeroCpf);
+        
+        String numNum = request.getParameter("nr_numero");
+        Long numeroNum = Long.parseLong(numNum);
+        usuarioa.setNrCpf(numeroNum);
+        
         usuarioa.setSenha(request.getParameter("nm_senha"));
         usuarioa.setDescricaoPosicao(request.getParameter("ds_posicao_politica"));
         usuarioa.setNomeUsuarioAdm(request.getParameter("nm_usuario_adm"));

@@ -1,18 +1,11 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet;
+package br.edu.iff.site_da_politica;
 
-<<<<<<< HEAD
-import usuarios.UsuarioComum;
-import util.HibernateUtil;
-=======
-import br.edu.iff.site_da_politica.UsuarioComum;
 import br.edu.iff.site_da_politica.util.HibernateUtil;
->>>>>>> 10109564d9c61866dc0ce322ce58876703b4d443
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -26,7 +19,7 @@ import org.hibernate.Transaction;
  *
  * @author aluno
  */
-public class UsuarioComumServlet extends HttpServlet {
+public class PublicacaoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,10 +38,10 @@ public class UsuarioComumServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioComumServlet</title>");            
+            out.println("<title>Servlet PublicacaoServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioComumServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet PublicacaoServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -82,36 +75,23 @@ public class UsuarioComumServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            UsuarioComum usuarioc = new UsuarioComum();
-            usuarioc.setDsEmail(request.getParameter("ds_email"));
-            usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
-            usuarioc.setNmEstado(request.getParameter("nm_estado"));
+            Publicacao post = new Publicacao();
+            post.setTitulo(request.getParameter("titulo"));
+            post.setTexto(request.getParameter("texto"));
             
-            String num = request.getParameter("nr_numero");
-            Long numero = Long.parseLong(num);
-            usuarioc.setNrNumero(numero);
-            
-            String cpfXaBlau = request.getParameter("nr_cpf");
-            cpfXaBlau = cpfXaBlau.replaceAll("-", "");
-            cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
-            usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
-            
-            usuarioc.setNmSenha(request.getParameter("nm_senha"));
-            usuarioc.setDsPosicao(request.getParameter("ds_posicao"));
-            usuarioc.setNmUsuarioComum(request.getParameter("nm_usuario_comum"));
-            usuarioc.setNmNickNameComum(request.getParameter("nm_nick_name_comum"));
-            
-            String datinha = request.getParameter("dt_nascimento");
-            usuarioc.setDtNascimento(datinha);
-            System.out.println("Data:" + datinha);
+           
+           
+            String datazinha = request.getParameter("dt_data");
+            post.setDtData(datazinha);
+           
             
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
-            sessionRecheio.saveOrUpdate(usuarioc);
+            sessionRecheio.saveOrUpdate(post);
             tr.commit();
             
-            response.sendRedirect("index.html");
+            response.sendRedirect("principal.jsp");
             processRequest(request, response);
     }
 

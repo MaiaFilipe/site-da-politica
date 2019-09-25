@@ -1,11 +1,15 @@
 package usuarios;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -14,6 +18,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usuario_politico")
 public class UsuarioPolitico implements Serializable {
+
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "nr_cpf")
+    private Long nrCpf;
+    
+    @OneToMany(mappedBy = "fkCdUsuarioPolitico")
+    private Collection<Publicacao> publicacaoCollection;
     
     @Id
     @GeneratedValue
@@ -22,9 +33,6 @@ public class UsuarioPolitico implements Serializable {
     
     @Column(name = "nm_usuario_politico") 
     private String nomeUsuarioPolitico;
-
-    @Column(name = "nr_cpf")
-    private Integer numeroCpf;
 
     @Column(name = "ds_email")
     private String descricaoEmail;
@@ -72,15 +80,15 @@ public class UsuarioPolitico implements Serializable {
     /**
      * @return the numeroCpf
      */
-    public Integer getNumeroCpf() {
-        return numeroCpf;
+    public Long getnrCpf() {
+        return nrCpf;
     }
 
     /**
      * @param numeroCpf the numeroCpf to set
      */
-    public void setNumeroCpf(Integer numeroCpf) {
-        this.numeroCpf = numeroCpf;
+    public void setNnrCpf(Long numeroCpf) {
+        this.nrCpf = nrCpf;
     }
 
     /**
@@ -159,6 +167,26 @@ public class UsuarioPolitico implements Serializable {
 
     void setDataNascimento(String parameter) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public UsuarioPolitico() {
+    }
+
+    public Long getNrCpf() {
+        return nrCpf;
+    }
+
+    public void setNrCpf(Long nrCpf) {
+        this.nrCpf = nrCpf;
+    }
+
+    @XmlTransient
+    public Collection<Publicacao> getPublicacaoCollection() {
+        return publicacaoCollection;
+    }
+
+    public void setPublicacaoCollection(Collection<Publicacao> publicacaoCollection) {
+        this.publicacaoCollection = publicacaoCollection;
     }
 
 }

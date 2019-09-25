@@ -37,7 +37,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioPoliticoServlet</title>");            
+            out.println("<title>Servlet UsuarioPoliticoServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet UsuarioPoliticoServlet at " + request.getContextPath() + "</h1>");
@@ -59,7 +59,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
- 
+
     }
 
     /**
@@ -73,16 +73,20 @@ public class UsuarioPoliticoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        UsuarioPolitico usuariop = new UsuarioPolitico();
+        usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
+        usuariop.setDescricaoEmail(request.getParameter("ds_email"));
+        usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
+        usuariop.setSenha(request.getParameter("nm_senha"));
+        usuariop.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
+        usuariop.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
+        usuariop.setNickPolitico(request.getParameter("nm_nick_politico"));
+
+        String numCpf = request.getParameter("nr_cpf");
+        Long numeroCpf = Long.parseLong(numCpf);
+        usuariop.setNrCpf(numeroCpf);
         processRequest(request, response);
-            UsuarioPolitico usuariop = new UsuarioPolitico();
-            usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
-            usuariop.setDescricaoEmail(request.getParameter("ds_email"));
-            usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
-            usuariop.setSenha(request.getParameter("nm_senha"));
-            usuariop.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
-            usuariop.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
-            usuariop.setNickPolitico(request.getParameter("nm_nick_politico"));
-            usuariop.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
     }
 
     /**
