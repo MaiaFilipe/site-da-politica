@@ -101,7 +101,7 @@ public class UsuarioComum implements Serializable {
         this.cdUsuarioComum = cdUsuarioComum;
     }
 
-    public UsuarioComum(Integer cdUsuarioComum, Long nrNumero, String nmNickNameComum) {
+    public UsuarioComum(Integer cdUsuarioComum, BigInteger nrNumero, String nmNickNameComum) {
         this.cdUsuarioComum = cdUsuarioComum;
         this.nrNumero = nrNumero;
         this.nmNickNameComum = nmNickNameComum;
@@ -115,19 +115,19 @@ public class UsuarioComum implements Serializable {
         this.dsUsuarioComum = dsUsuarioComum;
     }
 
-    public Long getNrNumero() {
-        return nrNumero;
+    public BigInteger getNrNumero() {
+        return this.nrNumero;
     }
 
-    public void setNrNumero(Long nrNumero) {
+    public void setNrNumero(BigInteger nrNumero) {
         this.nrNumero = nrNumero;
     }
 
-    public Long getNrCpf() {
-        return nrCpf;
+    public BigInteger getNrCpf() {
+        return this.nrCpf;
     }
 
-    public void setNrCpf(Long nrCpf) {
+    public void setNrCpf(BigInteger nrCpf) {
         this.nrCpf = nrCpf;
     }
 
@@ -218,22 +218,6 @@ public class UsuarioComum implements Serializable {
     @Override
     public String toString() {
         return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
-    }
-
-    public BigInteger getNrNumero() {
-        return nrNumero;
-    }
-
-    public void setNrNumero(BigInteger nrNumero) {
-        this.nrNumero = nrNumero;
-    }
-
-    public BigInteger getNrCpf() {
-        return nrCpf;
-    }
-
-    public void setNrCpf(BigInteger nrCpf) {
-        this.nrCpf = nrCpf;
     }
 
     @XmlTransient

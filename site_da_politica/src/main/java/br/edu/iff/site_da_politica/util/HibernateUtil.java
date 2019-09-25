@@ -5,7 +5,10 @@
  */
 package br.edu.iff.site_da_politica.util;
 
+import br.edu.iff.site_da_politica.Publicacao;
+import br.edu.iff.site_da_politica.UsuarioAdm;
 import br.edu.iff.site_da_politica.UsuarioComum;
+import br.edu.iff.site_da_politica.UsuarioPolitico;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -34,6 +37,9 @@ public class HibernateUtil {
         AnnotationConfiguration cfg = new AnnotationConfiguration();
         cfg.configure();
         cfg.addAnnotatedClass(UsuarioComum.class);
+        cfg.addAnnotatedClass(UsuarioAdm.class);
+        cfg.addAnnotatedClass(UsuarioPolitico.class);
+        cfg.addAnnotatedClass(Publicacao.class);
         factory = cfg.buildSessionFactory();
     }
 

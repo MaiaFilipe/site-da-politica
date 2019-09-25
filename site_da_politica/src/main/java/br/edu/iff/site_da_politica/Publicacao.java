@@ -45,7 +45,7 @@ public class Publicacao implements Serializable {
     @Column(name = "dt_data")
     @Temporal(TemporalType.DATE)
     @NotNull
-    private String dtData;
+    private Date dtData;
     
     @Column(name = "tm_horario")
     @Temporal(TemporalType.TIME)
@@ -86,11 +86,11 @@ public class Publicacao implements Serializable {
         this.cdPublicacao = cdPublicacao;
     }
 
-    public String getDtData() {
+    public Date getDtData() {
         return dtData;
     }
 
-    public void setDtData(String dtData) {
+    public void setDtData(Date dtData) {
         this.dtData = dtData;
     }
 

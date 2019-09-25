@@ -8,6 +8,11 @@ package br.edu.iff.site_da_politica;
 import br.edu.iff.site_da_politica.util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +43,7 @@ public class PublicacaoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet PublicacaoServlet</title>");            
+            out.println("<title>Servlet PublicacaoServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet PublicacaoServlet at " + request.getContextPath() + "</h1>");
@@ -60,7 +65,7 @@ public class PublicacaoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
- 
+
     }
 
     /**
@@ -74,25 +79,23 @@ public class PublicacaoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            Publicacao post = new Publicacao();
-            post.setTitulo(request.getParameter("titulo"));
-            post.setTexto(request.getParameter("texto"));
-            
-           
-           
-            String datazinha = request.getParameter("dt_data");
-            post.setDtData(datazinha);
-           
-            
-            Session sessionRecheio;
-            sessionRecheio = HibernateUtil.getSession();
-            Transaction tr = sessionRecheio.beginTransaction();
-            sessionRecheio.saveOrUpdate(post);
-            tr.commit();
-            
-            response.sendRedirect("principal.jsp");
-            processRequest(request, response);
+
+        Publicacao post = new Publicacao();
+        post.setTitulo(request.getParameter("titulo"));
+        post.setTexto(request.getParameter("texto"));
+
+        Date data = new Date();
+        post.setDtData(data);
+        post.setTmHorario(data);
+
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        sessionRecheio.saveOrUpdate(post);
+        tr.commit();
+
+        response.sendRedirect("principal.jsp");
+        processRequest(request, response);
     }
 
     /**
