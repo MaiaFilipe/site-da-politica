@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica.util;
+package util;
 
-import br.edu.iff.site_da_politica.UsuarioComum;
+import usuarios.UsuarioComum;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

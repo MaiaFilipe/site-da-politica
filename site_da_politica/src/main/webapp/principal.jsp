@@ -1,4 +1,4 @@
-<%@page import="br.edu.iff.site_da_politica.UsuarioComum"%>
+<%@page import="usuarios.UsuarioComum"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -26,7 +26,7 @@
                                 UsuarioComum usuario = (UsuarioComum) session.getAttribute("UsuarioLogado");
                             %>
 
-                            <li><a href="Perfil_Luisa.html" ><span class="label"><%=usuario.getNmUsuarioComum()%></span></a></li>
+                            <li><a href="perfil.jsp" ><span class="label"><%=usuario.getNmUsuarioComum()%></span></a></li>
                             <li><a href="Pagina_login.html" class="icon fa fa-user-circle-o"><span class="label">Perfil</span></a></li>
                             <li><a href="Notificação.html" class="icon fa fa-bell-o"><span class="label">Notificações</span></a></li>
                             <li><a href="#" class="icon fa fa-ellipsis-v"><span class="label">Mais</span></a></li>

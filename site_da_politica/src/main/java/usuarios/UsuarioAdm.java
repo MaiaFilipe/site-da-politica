@@ -1,4 +1,4 @@
-package br.edu.iff.site_da_politica;
+package usuarios;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -6,7 +6,7 @@
  */
 package servlet;
 
-import br.edu.iff.site_da_politica.UsuarioPolitico;
+import usuarios.UsuarioPolitico;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

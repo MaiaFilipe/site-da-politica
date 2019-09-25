@@ -5,8 +5,8 @@
  */
 package servlet;
 
-import br.edu.iff.site_da_politica.UsuarioComum;
-import br.edu.iff.site_da_politica.util.HibernateUtil;
+import usuarios.UsuarioComum;
+import util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
