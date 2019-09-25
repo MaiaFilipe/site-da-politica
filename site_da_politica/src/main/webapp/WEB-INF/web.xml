@@ -16,6 +16,10 @@
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>pacotin.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioServletSA</servlet-name>
+        <servlet-class>br.edu.iff.site_da_politica.util.UsuarioServletSA</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioComumServlet</servlet-name>
         <url-pattern>/UsuarioComumServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServletSA</servlet-name>
+        <url-pattern>/UsuarioServletSA</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
