@@ -6,13 +6,9 @@
  */
 package servlet;
 
-<<<<<<< HEAD
+
 import usuarios.UsuarioComum;
 import util.HibernateUtil;
-=======
-import br.edu.iff.site_da_politica.UsuarioComum;
-import br.edu.iff.site_da_politica.util.HibernateUtil;
->>>>>>> 10109564d9c61866dc0ce322ce58876703b4d443
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

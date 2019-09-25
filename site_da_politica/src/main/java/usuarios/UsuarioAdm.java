@@ -1,5 +1,6 @@
 package usuarios;
 
+import funcoes.Publicacao;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;

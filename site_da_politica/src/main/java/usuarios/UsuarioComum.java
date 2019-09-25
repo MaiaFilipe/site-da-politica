@@ -5,6 +5,8 @@
  */
 package usuarios;
 
+import funcoes.Publicacao;
+import servlet.UsuarioComumServlet;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Collection;
@@ -49,16 +51,17 @@ public class UsuarioComum implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "nr_numero")
-    private BigInteger nrNumero;
+    private Long nrNumero;
+    
     @Column(name = "nr_cpf")
-    private BigInteger nrCpf;
+    private Long nrCpf;
+    
     @OneToMany(mappedBy = "fkCdUsuarioComum")
     private Collection<Publicacao> publicacaoCollection;
 
     private static final long serialVersionUID = 1L;
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
-    
     
     @NotNull
     @Column(name = "nm_senha")
@@ -218,22 +221,6 @@ public class UsuarioComum implements Serializable {
     @Override
     public String toString() {
         return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
-    }
-
-    public BigInteger getNrNumero() {
-        return nrNumero;
-    }
-
-    public void setNrNumero(BigInteger nrNumero) {
-        this.nrNumero = nrNumero;
-    }
-
-    public BigInteger getNrCpf() {
-        return nrCpf;
-    }
-
-    public void setNrCpf(BigInteger nrCpf) {
-        this.nrCpf = nrCpf;
     }
 
     @XmlTransient
