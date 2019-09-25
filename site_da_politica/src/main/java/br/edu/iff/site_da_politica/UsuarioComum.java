@@ -6,6 +6,8 @@
 package br.edu.iff.site_da_politica;
 
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,11 +16,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -42,18 +46,19 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "UsuarioComum.findByNmEstado", query = "SELECT u FROM UsuarioComum u WHERE u.nmEstado = :nmEstado")})
 public class UsuarioComum implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "nr_numero")
+    private BigInteger nrNumero;
+    @Column(name = "nr_cpf")
+    private BigInteger nrCpf;
+    @OneToMany(mappedBy = "fkCdUsuarioComum")
+    private Collection<Publicacao> publicacaoCollection;
+
     private static final long serialVersionUID = 1L;
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
     
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "nr_numero")
-    private Long nrNumero;
-    
-    @NotNull
-    @Column(name = "nr_cpf")
-    private Long nrCpf;
     
     @NotNull
     @Column(name = "nm_senha")
@@ -213,6 +218,35 @@ public class UsuarioComum implements Serializable {
     @Override
     public String toString() {
         return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
+    }
+
+    public BigInteger getNrNumero() {
+        return nrNumero;
+    }
+
+    public void setNrNumero(BigInteger nrNumero) {
+        this.nrNumero = nrNumero;
+    }
+
+    public BigInteger getNrCpf() {
+        return nrCpf;
+    }
+
+    public void setNrCpf(BigInteger nrCpf) {
+        this.nrCpf = nrCpf;
+    }
+
+    @XmlTransient
+    public Collection<Publicacao> getPublicacaoCollection() {
+        return publicacaoCollection;
+    }
+
+    public void setPublicacaoCollection(Collection<Publicacao> publicacaoCollection) {
+        this.publicacaoCollection = publicacaoCollection;
+    }
+
+    void setTitulo(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
