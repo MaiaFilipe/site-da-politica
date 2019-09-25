@@ -6,13 +6,10 @@
  */
 package servlet;
 
-<<<<<<< HEAD
-import br.edu.iff.site_da_politica.PublicacaoServlet;
-import br.edu.iff.site_da_politica.UsuarioComum;
-import br.edu.iff.site_da_politica.util.HibernateUtil;
-=======
+
+import servlet.PublicacaoServlet;
+import usuarios.UsuarioComum;
 import util.HibernateUtil;
->>>>>>> df0acdc73b84147246255e9eaf74895c5e451648
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
@@ -95,13 +92,13 @@ public class UsuarioComumServlet extends HttpServlet {
         usuarioc.setNmEstado(request.getParameter("nm_estado"));
 
         String num = request.getParameter("nr_numero");
-        BigInteger numero = BigInteger.valueOf(Long.parseLong(num));
+        Long numero = Long.getLong(num);
         usuarioc.setNrNumero(numero);
 
         String cpfXaBlau = request.getParameter("nr_cpf");
         cpfXaBlau = cpfXaBlau.replaceAll("-", "");
         cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
-        usuarioc.setNrCpf(BigInteger.valueOf(Long.parseLong(cpfXaBlau)));
+        usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
 
         usuarioc.setNmSenha(request.getParameter("nm_senha"));
         usuarioc.setDsPosicao(request.getParameter("ds_posicao"));

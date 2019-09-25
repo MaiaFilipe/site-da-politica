@@ -7,7 +7,6 @@ package usuarios;
 
 import funcoes.Publicacao;
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -103,7 +102,7 @@ public class UsuarioComum implements Serializable {
         this.cdUsuarioComum = cdUsuarioComum;
     }
 
-    public UsuarioComum(Integer cdUsuarioComum, BigInteger nrNumero, String nmNickNameComum) {
+    public UsuarioComum(Integer cdUsuarioComum, Long nrNumero, String nmNickNameComum) {
         this.cdUsuarioComum = cdUsuarioComum;
         this.nrNumero = nrNumero;
         this.nmNickNameComum = nmNickNameComum;
@@ -117,19 +116,19 @@ public class UsuarioComum implements Serializable {
         this.dsUsuarioComum = dsUsuarioComum;
     }
 
-    public BigInteger getNrNumero() {
+    public Long getNrNumero() {
         return this.nrNumero;
     }
 
-    public void setNrNumero(BigInteger nrNumero) {
+    public void setNrNumero(Long nrNumero) {
         this.nrNumero = nrNumero;
     }
 
-    public BigInteger getNrCpf() {
+    public Long getNrCpf() {
         return this.nrCpf;
     }
 
-    public void setNrCpf(BigInteger nrCpf) {
+    public void setNrCpf(Long nrCpf) {
         this.nrCpf = nrCpf;
     }
 
@@ -219,11 +218,7 @@ public class UsuarioComum implements Serializable {
 
     @Override
     public String toString() {
-<<<<<<< HEAD:site_da_politica/src/main/java/br/edu/iff/site_da_politica/UsuarioComum.java
-        return "br.edu.iff.site_da_politica.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
-=======
         return "usuarios.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
->>>>>>> df0acdc73b84147246255e9eaf74895c5e451648:site_da_politica/src/main/java/usuarios/UsuarioComum.java
     }
 
     @XmlTransient

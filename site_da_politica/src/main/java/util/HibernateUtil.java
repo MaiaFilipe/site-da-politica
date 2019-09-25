@@ -5,15 +5,12 @@
  */
 package util;
 
-<<<<<<< HEAD:site_da_politica/src/main/java/br/edu/iff/site_da_politica/util/HibernateUtil.java
-import br.edu.iff.site_da_politica.Publicacao;
-import br.edu.iff.site_da_politica.UsuarioAdm;
-import br.edu.iff.site_da_politica.UsuarioComum;
-import br.edu.iff.site_da_politica.UsuarioPolitico;
-=======
+import funcoes.Publicacao;
+import usuarios.UsuarioAdm;
+import usuarios.UsuarioComum;
+import usuarios.UsuarioPolitico;
 import usuarios.UsuarioComum;
 import servlet.Login;
->>>>>>> df0acdc73b84147246255e9eaf74895c5e451648:site_da_politica/src/main/java/util/HibernateUtil.java
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
