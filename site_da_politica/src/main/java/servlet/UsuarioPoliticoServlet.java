@@ -4,23 +4,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.iff.site_da_politica;
+package servlet;
 
-import br.edu.iff.site_da_politica.util.HibernateUtil;
+import br.edu.iff.site_da_politica.UsuarioPolitico;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
  * @author aluno
  */
-public class UsuarioComumServlet extends HttpServlet {
+public class UsuarioPoliticoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +37,10 @@ public class UsuarioComumServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioComumServlet</title>");            
+            out.println("<title>Servlet UsuarioPoliticoServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UsuarioComumServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UsuarioPoliticoServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,38 +73,16 @@ public class UsuarioComumServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            UsuarioComum usuarioc = new UsuarioComum();
-            usuarioc.setDsEmail(request.getParameter("ds_email"));
-            usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
-            usuarioc.setNmEstado(request.getParameter("nm_estado"));
-            
-            String num = request.getParameter("nr_numero");
-            Long numero = Long.parseLong(num);
-            usuarioc.setNrNumero(numero);
-            
-            String cpfXaBlau = request.getParameter("nr_cpf");
-            cpfXaBlau = cpfXaBlau.replaceAll("-", "");
-            cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
-            usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
-            
-            usuarioc.setNmSenha(request.getParameter("nm_senha"));
-            usuarioc.setDsPosicao(request.getParameter("ds_posicao"));
-            usuarioc.setNmUsuarioComum(request.getParameter("nm_usuario_comum"));
-            usuarioc.setNmNickNameComum(request.getParameter("nm_nick_name_comum"));
-            
-            String datinha = request.getParameter("dt_nascimento");
-            usuarioc.setDtNascimento(datinha);
-            System.out.println("Data:" + datinha);
-            
-            Session sessionRecheio;
-            sessionRecheio = HibernateUtil.getSession();
-            Transaction tr = sessionRecheio.beginTransaction();
-            sessionRecheio.saveOrUpdate(usuarioc);
-            tr.commit();
-            
-            response.sendRedirect("index.html");
-            processRequest(request, response);
+        processRequest(request, response);
+            UsuarioPolitico usuariop = new UsuarioPolitico();
+            usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
+            usuariop.setDescricaoEmail(request.getParameter("ds_email"));
+            usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
+            usuariop.setSenha(request.getParameter("nm_senha"));
+            usuariop.setDescricaoPosicaoPolitica(request.getParameter("ds_posicao_politica"));
+            usuariop.setNomeUsuarioPolitico(request.getParameter("nm_usuario_politico"));
+            usuariop.setNickPolitico(request.getParameter("nm_nick_politico"));
+            usuariop.setNumeroCpf(Integer.getInteger(request.getParameter("nr_cpf")));
     }
 
     /**
