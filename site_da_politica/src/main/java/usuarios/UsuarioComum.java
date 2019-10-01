@@ -47,29 +47,22 @@ import javax.xml.bind.annotation.XmlTransient;
 public class UsuarioComum implements Serializable {
 
     @Basic(optional = false)
-    @NotNull
     @Column(name = "nr_numero")
     private Long nrNumero;
     
     @Column(name = "nr_cpf")
     private Long nrCpf;
-    
-    @OneToMany(mappedBy = "fkCdUsuarioComum")
-    private Collection<Publicacao> publicacaoCollection;
 
     private static final long serialVersionUID = 1L;
     @Column(name = "ds_usuario_comum")
     private String dsUsuarioComum;
     
-    @NotNull
     @Column(name = "nm_senha")
     private String nmSenha;
     
-    @Size(max = 2147483647)
     @Column(name = "ds_posicao")
     private String dsPosicao;
     
-    @NotNull
     @Column(name = "nm_nick_name_comum")
     private String nmNickNameComum;
     
@@ -80,15 +73,12 @@ public class UsuarioComum implements Serializable {
     @Column(name = "cd_usuario_comum")
     private Integer cdUsuarioComum;
     
-    @NotNull
     @Column(name = "ds_email")
     private String dsEmail;
     
-    @NotNull
     @Column(name = "nm_usuario_comum")
     private String nmUsuarioComum;
     
-    @NotNull
     @Column(name = "dt_nascimento")
     private String dtNascimento;
     
@@ -219,15 +209,6 @@ public class UsuarioComum implements Serializable {
     @Override
     public String toString() {
         return "usuarios.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
-    }
-
-    @XmlTransient
-    public Collection<Publicacao> getPublicacaoCollection() {
-        return publicacaoCollection;
-    }
-
-    public void setPublicacaoCollection(Collection<Publicacao> publicacaoCollection) {
-        this.publicacaoCollection = publicacaoCollection;
     }
 
     void setTitulo(String parameter) {

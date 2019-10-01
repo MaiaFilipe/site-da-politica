@@ -91,10 +91,12 @@ public class UsuarioComumServlet extends HttpServlet {
         usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
         usuarioc.setNmEstado(request.getParameter("nm_estado"));
 
+        /*
         String num = request.getParameter("nr_numero");
         Long numero = Long.getLong(num);
         usuarioc.setNrNumero(numero);
-
+        */
+        
         String cpfXaBlau = request.getParameter("nr_cpf");
         cpfXaBlau = cpfXaBlau.replaceAll("-", "");
         cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
@@ -109,20 +111,9 @@ public class UsuarioComumServlet extends HttpServlet {
         usuarioc.setDtNascimento(datinha);
         System.out.println("Data:" + datinha);
 
-        // TODO corrigir a data
-        /* String datazinha = request.getParameter("dt_data");
-        SimpleDateFormat formatDt = new SimpleDateFormat("dd/MM/yyyy");
-        Date data;
-        try {
-            data = formatDt.parse(datazinha);
-        } catch (ParseException ex) {
-            Logger.getLogger(PublicacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
-            data = new Date();
-        }
-        post.setDtData(data);*/
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
-        Transaction tr = sessionRecheio.beginTransaction();
+        Transaction tr = sessionRecheio.beginTransaction();        
         sessionRecheio.saveOrUpdate(usuarioc);
         tr.commit();
 
