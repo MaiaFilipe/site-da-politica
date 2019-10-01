@@ -50,6 +50,7 @@ Contributor(s):
    		
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- DB Dialect -->
         <property name="show_sql">true</property> <!-- Show SQL in console -->
+        <property name="hibernate.show_sql">true</property>
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 	
     </session-factory>

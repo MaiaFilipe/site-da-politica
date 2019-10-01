@@ -210,9 +210,4 @@ public class UsuarioComum implements Serializable {
     public String toString() {
         return "usuarios.UsuarioComum[ cdUsuarioComum=" + cdUsuarioComum + " ]";
     }
-
-    void setTitulo(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

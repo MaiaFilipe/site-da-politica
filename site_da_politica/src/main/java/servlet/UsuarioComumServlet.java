@@ -90,16 +90,12 @@ public class UsuarioComumServlet extends HttpServlet {
         usuarioc.setDsEmail(request.getParameter("ds_email"));
         usuarioc.setDsUsuarioComum(request.getParameter("ds_usuario_comum"));
         usuarioc.setNmEstado(request.getParameter("nm_estado"));
-
-        /*
+        
         String num = request.getParameter("nr_numero");
-        Long numero = Long.getLong(num);
-        usuarioc.setNrNumero(numero);
-        */
+        usuarioc.setNrNumero(Long.parseLong(num));
         
         String cpfXaBlau = request.getParameter("nr_cpf");
-        cpfXaBlau = cpfXaBlau.replaceAll("-", "");
-        cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
+        cpfXaBlau = cpfXaBlau.replaceAll("-", ""); cpfXaBlau = cpfXaBlau.replaceAll("\\.", "");
         usuarioc.setNrCpf(Long.parseLong(cpfXaBlau));
 
         usuarioc.setNmSenha(request.getParameter("nm_senha"));
