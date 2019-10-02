@@ -45,7 +45,7 @@ Contributor(s):
     <session-factory>
         <property name="connection.url">jdbc:postgresql://localhost/site-da-politica</property> <!-- BD Mane -->
         <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
-        <property name="connection.username">postgres</property> <!-- DB User -->
+        <property name="connection.username">site-da-politica</property> <!-- DB User -->
         <property name="connection.password">postgres</property> <!-- DB Password -->
    		
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- DB Dialect -->
