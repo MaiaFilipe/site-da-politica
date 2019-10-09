@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>PublicacaoServlet</servlet-name>
-        <servlet-class>br.edu.iff.site_da_politica.PublicacaoServlet</servlet-class>
+        <servlet-class>servlet.PublicacaoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PublicacaoServlet</servlet-name>

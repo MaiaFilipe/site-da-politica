@@ -84,15 +84,15 @@ public class PublicacaoServlet extends HttpServlet {
         Date data = new Date();
         post.setDtData(data);
         post.setTmHorario(data);
+        post.setCdPublicacao(1);
 
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
         sessionRecheio.saveOrUpdate(post);
         tr.commit();
-
+        sessionRecheio.close();
         response.sendRedirect("principal.jsp");
-        processRequest(request, response);
     }
 
     /**
