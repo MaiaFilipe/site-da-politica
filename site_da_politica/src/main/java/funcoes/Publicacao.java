@@ -24,9 +24,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import usuarios.UsuarioAdm;
 import usuarios.UsuarioComum;
-import usuarios.UsuarioPolitico;
 
 /**
  *
@@ -70,18 +68,10 @@ public class Publicacao implements Serializable {
     @Column(name = "texto")
     private String texto;
     
-    @JoinColumn(name = "fk_cd_usuario_adm", referencedColumnName = "cd_usuario_adm")
-    @ManyToOne
-    private UsuarioAdm fkCdUsuarioAdm;
-    
     @JoinColumn(name = "fk_cd_usuario_comum", referencedColumnName = "cd_usuario_comum")
     @ManyToOne
     private UsuarioComum fkCdUsuarioComum;
     
-    @JoinColumn(name = "fk_cd_usuario_politico", referencedColumnName = "cd_usuario_politico")
-    @ManyToOne
-    private UsuarioPolitico fkCdUsuarioPolitico;
-
     public Publicacao() {
     }
 
@@ -129,28 +119,12 @@ public class Publicacao implements Serializable {
         this.texto = texto;
     }
 
-    public UsuarioAdm getFkCdUsuarioAdm() {
-        return fkCdUsuarioAdm;
-    }
-
-    public void setFkCdUsuarioAdm(UsuarioAdm fkCdUsuarioAdm) {
-        this.fkCdUsuarioAdm = fkCdUsuarioAdm;
-    }
-
     public UsuarioComum getFkCdUsuarioComum() {
         return fkCdUsuarioComum;
     }
 
     public void setFkCdUsuarioComum(UsuarioComum fkCdUsuarioComum) {
         this.fkCdUsuarioComum = fkCdUsuarioComum;
-    }
-
-    public UsuarioPolitico getFkCdUsuarioPolitico() {
-        return fkCdUsuarioPolitico;
-    }
-
-    public void setFkCdUsuarioPolitico(UsuarioPolitico fkCdUsuarioPolitico) {
-        this.fkCdUsuarioPolitico = fkCdUsuarioPolitico;
     }
 
     @Override

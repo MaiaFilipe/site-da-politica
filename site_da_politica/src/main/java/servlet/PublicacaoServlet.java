@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import usuarios.UsuarioComum;
 
 /**
  *
@@ -49,7 +50,6 @@ public class PublicacaoServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -84,8 +84,10 @@ public class PublicacaoServlet extends HttpServlet {
         Date data = new Date();
         post.setDtData(data);
         post.setTmHorario(data);
-        post.setCdPublicacao(1);
-
+        
+        UsuarioComum usuario = (UsuarioComum) request.getSession().getAttribute("UsuarioLogado");
+        post.setFkCdUsuarioComum(usuario);
+        
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();

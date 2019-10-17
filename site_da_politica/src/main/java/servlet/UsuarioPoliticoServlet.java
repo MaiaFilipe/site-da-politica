@@ -46,7 +46,6 @@ public class UsuarioPoliticoServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -75,7 +74,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
             throws ServletException, IOException {
         
         UsuarioPolitico usuariop = new UsuarioPolitico();
-        usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
+        /*usuariop.setCodigoUsuarioPolitico(Integer.getInteger(request.getParameter("cd_usuario_politico")));
         usuariop.setDescricaoEmail(request.getParameter("ds_email"));
         usuariop.setDescricaoUsuarioPolitico(request.getParameter("ds_usuario_politico"));
         usuariop.setSenha(request.getParameter("nm_senha"));
@@ -85,7 +84,7 @@ public class UsuarioPoliticoServlet extends HttpServlet {
 
         String numCpf = request.getParameter("nr_cpf");
         Long numeroCpf = Long.parseLong(numCpf);
-        usuariop.setNrCpf(numeroCpf);
+        usuariop.setNrCpf(numeroCpf);*/
         processRequest(request, response);
     }
 

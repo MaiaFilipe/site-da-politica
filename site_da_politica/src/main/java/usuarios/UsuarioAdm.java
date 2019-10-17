@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author aluno
  */
 @Entity
-@Table(name = "usuario_adm")
-public class UsuarioAdm implements Serializable {
-
+//@Table(name = "usuario_adm")
+public class UsuarioAdm extends UsuarioComum implements Serializable {
+/*
     @Basic(optional = false)
     @NotNull
     @Column(name = "nr_numero")
@@ -61,138 +61,74 @@ public class UsuarioAdm implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataNascimento;
 
-    /**
-     * @return the dataNascimento
-     */
     public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    /**
-     * @param dataNascimento the dataNascimento to set
-     */
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
     
-    /**
-     * @return the codigoUsuarioAdm
-     */
     public Integer getCodigoUsuarioAdm() {
         return codigoUsuarioAdm;
     }
 
-    /**
-     * @param codigoUsuarioAdm the codigoUsuarioAdm to set
-     */
     public void setCodigoUsuarioAdm(Integer codigoUsuarioAdm) {
         this.codigoUsuarioAdm = codigoUsuarioAdm;
     }
 
-    /**
-     * @return the descricaoEmail
-     */
     public String getDescricaoEmail() {
         return descricaoEmail;
     }
 
-    /**
-     * @param descricaoEmail the descricaoEmail to set
-     */
     public void setDescricaoEmail(String descricaoEmail) {
         this.descricaoEmail = descricaoEmail;
     }
 
-    /**
-     * @return the descricaoUsuarioAdm
-     */
     public String getDescricaoUsuarioAdm() {
         return descricaoUsuarioAdm;
     }
 
-    /**
-     * @param descricaoUsuarioAdm the descricaoUsuarioAdm to set
-     */
     public void setDescricaoUsuarioAdm(String descricaoUsuarioAdm) {
         this.descricaoUsuarioAdm = descricaoUsuarioAdm;
     }
 
-    /**
-     * @return the numero
-     */
-   
-
-    /**
-     * @param numero the numero to set
-     */
-    
-
-    /**
-     * @return the numeroCpf
-     */
     public Long getnrCpf() {
         return nrCpf;
     }
 
-    /**
-     * @param numeroCpf the numeroCpf to set
-     */
     public void setnrCpf(Long numeroCpf) {
         this.nrCpf = nrCpf;
     }
 
-    /**
-     * @return the senha
-     */
     public String getSenha() {
         return senha;
     }
 
-    /**
-     * @param senha the senha to set
-     */
     public void setSenha(String senha) {
         this.senha = senha;
     }
 
-    /**
-     * @return the descricaoPosicao
-     */
     public String getDescricaoPosicao() {
         return descricaoPosicao;
     }
 
-    /**
-     * @param descricaoPosicao the descricaoPosicao to set
-     */
     public void setDescricaoPosicao(String descricaoPosicao) {
         this.descricaoPosicao = descricaoPosicao;
     }
 
-    /**
-     * @return the nomeUsuarioAdm
-     */
     public String getNomeUsuarioAdm() {
         return nomeUsuarioAdm;
     }
 
-    /**
-     * @param nomeUsuarioAdm the nomeUsuarioAdm to set
-     */
     public void setNomeUsuarioAdm(String nomeUsuarioAdm) {
         this.nomeUsuarioAdm = nomeUsuarioAdm;
     }
 
-    /**
-     * @return the nickUsuarioAdm
-     */
     public String getNickUsuarioAdm() {
         return nickUsuarioAdm;
     }
 
-    /**
-     * @param nickUsuarioAdm the nickUsuarioAdm to set
-     */
     public void setNickUsuarioAdm(String nickUsuarioAdm) {
         this.nickUsuarioAdm = nickUsuarioAdm;
     }
@@ -224,4 +160,5 @@ public class UsuarioAdm implements Serializable {
     public void setPublicacaoCollection(Collection<Publicacao> publicacaoCollection) {
         this.publicacaoCollection = publicacaoCollection;
     }
+    */
 }

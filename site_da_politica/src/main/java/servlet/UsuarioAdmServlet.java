@@ -51,7 +51,6 @@ public class UsuarioAdmServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -80,7 +79,7 @@ public class UsuarioAdmServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         UsuarioAdm usuarioa = new UsuarioAdm();
-        usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
+       /* usuarioa.setCodigoUsuarioAdm(Integer.getInteger(request.getParameter("cd_usuario_adm")));
         usuarioa.setDescricaoEmail(request.getParameter("ds_email"));
         usuarioa.setDescricaoUsuarioAdm(request.getParameter("ds_usuario_adm"));
         
@@ -106,7 +105,7 @@ public class UsuarioAdmServlet extends HttpServlet {
             //ex.printStackTrace();
             Logger.getLogger(UsuarioAdmServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        usuarioa.setDataNascimento(dataNasc);
+        usuarioa.setDataNascimento(dataNasc);*/
 
     }
 
