@@ -24,12 +24,14 @@
 
                             <%
                                 UsuarioComum usuario = (UsuarioComum) session.getAttribute("UsuarioLogado");
+                                if (usuario==null){
                             %>
-
+                            <li><a href="Pagina_login.html"><span class="label">Fazer login </span></a></li>
+                            <% }else{ %>
                             <li><a href="perfil.jsp" ><span class="label"><%=usuario.getNmUsuarioComum()%></span></a></li>
-                            <li><a href="Pagina_login.html" class="icon fa fa-user-circle-o"><span class="label">Perfil</span></a></li>
+                            <% } %>
                             <li><a href="Notificação.html" class="icon fa fa-bell-o"><span class="label">Notificações</span></a></li>
-                            <li><a href="#" class="icon fa fa-ellipsis-v"><span class="label">Mais</span></a></li>
+                            <li><a href="publicacao.jsp" class="icon fa fa-ellipsis-v"><span class="label">Mais</span></a></li>
                         </ul>
                     </header>
 
