@@ -20,6 +20,14 @@
         <servlet-name>PublicacaoServlet</servlet-name>
         <servlet-class>servlet.PublicacaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PublicacaoServletD</servlet-name>
+        <servlet-class>servlet.PublicacaoServletD</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PublicacaoServletDelete</servlet-name>
+        <servlet-class>servlet.PublicacaoServletDelete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PublicacaoServlet</servlet-name>
         <url-pattern>/PublicacaoServlet</url-pattern>
@@ -40,12 +48,20 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PublicacaoServletD</servlet-name>
+        <url-pattern>/PublicacaoServletD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PublicacaoServletDelete</servlet-name>
+        <url-pattern>/PublicacaoServletDelete</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>principal.jsp</welcome-file>  
-    </welcome-file-list>  
+        <welcome-file>principal.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
